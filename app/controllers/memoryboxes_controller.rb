@@ -1,0 +1,2 @@
+class MemoryboxesController < ApplicationController
+end

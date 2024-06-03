@@ -10,9 +10,36 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_06_03_161446) do
+ActiveRecord::Schema[7.1].define(version: 2024_06_03_164604) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "memories", force: :cascade do |t|
+    t.text "text"
+    t.date "date_of_memory"
+    t.bigint "memorybox_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["memorybox_id"], name: "index_memories_on_memorybox_id"
+  end
+
+  create_table "memoryboxes", force: :cascade do |t|
+    t.string "title"
+    t.bigint "timecapsule_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["timecapsule_id"], name: "index_memoryboxes_on_timecapsule_id"
+    t.index ["user_id"], name: "index_memoryboxes_on_user_id"
+  end
+
+  create_table "timecapsules", force: :cascade do |t|
+    t.string "name"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_timecapsules_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -26,4 +53,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_03_161446) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "memories", "memoryboxes"
+  add_foreign_key "memoryboxes", "timecapsules"
+  add_foreign_key "memoryboxes", "users"
+  add_foreign_key "timecapsules", "users"
 end

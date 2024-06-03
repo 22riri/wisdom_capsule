@@ -1,0 +1,2 @@
+class TimecapsulesController < ApplicationController
+end
