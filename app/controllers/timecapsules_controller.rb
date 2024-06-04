@@ -1,5 +1,5 @@
 class TimecapsulesController < ApplicationController
-  before_action :set_timecapsule, only: %i[ show ]
+  before_action :set_timecapsule, only: [ :show ]
   def index
     @timecapsules = Timecapsule.all
   end
