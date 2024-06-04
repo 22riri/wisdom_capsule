@@ -1,0 +1,8 @@
+<h1>New Memories</h1>
+
+<p>You can create a new memory</p>
+
+<%= simple_form_for [@memorybox, @memory] do |f| %>
+  <%= f.input :text %>
+  <%= f.submit "Submit memory", class: "btn btn-primary" %>
+<% end %>

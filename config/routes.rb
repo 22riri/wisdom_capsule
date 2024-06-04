@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   end
 
   resources :memoryboxes, only: [:new, :create] do
-    resources :memories, only: [:new, :create, :show]
+    resources :memories, only: [:new, :create, :show, :destroy]
   end
 
     get "ownmemories", to: "memories#ownmemories", as: :ownmemories
