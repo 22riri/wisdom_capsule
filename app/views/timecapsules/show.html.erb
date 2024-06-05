@@ -1,8 +1,26 @@
-<h1> <%= @timecapsule.name %></h1>
-<p>Create your memory box</p>
-
-
-<%# create the form for a new memorybox %>
-<%# link button to go back to the previous page (PROFILE PAGE) %>
-<%# link_to ownmemories_path %>
-<%# cards %>
+<div class="container justify-content-start align-items-start">
+  <h1> <%= @timecapsule.name %> </h1>
+  <h2>Memory boxes</h2>
+  <div class="">
+    <ul class="cards d-flex">
+      <% @timecapsule.memoryboxes.all.each do |memorybox| %>
+        <li class="card">
+          <div>
+            <h3 class="card-title"><%= memorybox.title %></h3>
+            <div class="card-content">
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            </div>
+          </div>
+          <div class="card-link-wrapper">
+            <a href="" class="card-link">Click!</a>
+          </div>
+        </li>
+      <% end %>
+      <li class="card">
+        <div>
+          <%= render "memoryboxes/form", timecapsule: @timecapsule, memorybox:@memorybox %>
+        </div>
+      </li>
+    </ul>
+  </div>
+ </div>
