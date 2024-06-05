@@ -1,10 +1,25 @@
 <% if @memorybox.present? %>
   <h1><%= @time_capsule.name %></h1>
-
-  <h2><%= @memorybox.title %></h2>
-
-  <%= @memories %>
+  <h2><%= @memorybox.title %> memorybox</h2>
+  <div class="w-100">
+    <% @memories.each do |memory| %>
+      <%= memory.text %>
+      <% if memory.media.present? %>
+        <div class="w-50">
+          <div><%= image_tag memory.media if memory.media.blob.content_type.starts_with?('image/') %></div>
+        </div>
+        <div class="w-50">
+          <%= video_tag memory.media, controls: true if memory.media.blob.content_type.starts_with?('video/') %>
+        </div>
+        <div class="w-50">
+          <%= audio_tag memory.media, controls: true if memory.media.blob.content_type.starts_with?('audio/') %>
+        </div>
+      <% end %>
+      <div><%= link_to "Remove my memory", memorybox_memory_path(@memorybox, memory), data: { turbo_method: :delete, turbo_confirm: "Are you sure?"} %></div>
+    <% end %>
+  </div>
 <% else %>
   <h1>You don't have memories in this memory box</h1>
 <% end %>
 
+<%= link_to "create a memory", new_memorybox_memory_path %>
