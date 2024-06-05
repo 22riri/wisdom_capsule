@@ -2,7 +2,12 @@
 
 
 .big_header {
+  color: $highlight-color ;
   font-family :$big-header;
+  border-radius: 50%;
+  background-color:$pale-mauve;
+  padding: 5%;
+  margin: auto;
   text-align: center;
 }
 
