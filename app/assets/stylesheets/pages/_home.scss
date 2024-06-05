@@ -1,8 +1,18 @@
 // Specific CSS for your home-page
-
+.bodypage {
+  background-color: $primary-color;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "lato" "sans-serif";
+  padding: 5%;
+  margin: 9%;
+  border-radius: 2%;
+}
 
 .big_header {
   color: $highlight-color ;
+  font-size: 6rem;
   font-family :$big-header;
   border-radius: 50%;
   background-color:$pale-mauve;
@@ -11,14 +21,13 @@
   text-align: center;
 }
 
-.bodypage {
-  background-color: $primary-color;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-family: "lato" "sans-serif";
-  padding: 5%;
-  margin: 5%;
+.motto {
+  padding: 3%;
+}
+
+.mottotext {
+  font-family: $big-header;
+  color: $citrus-green;
 }
 
 %button{
@@ -26,8 +35,10 @@
 }
 
 .presentation{
-  text-align: justify;
-  padding: 5%;
+  text-align: center;
+  padding: 3%;
+  font-family: $text-font;
+  font-size: larger;
 }
 
 .type--B{
