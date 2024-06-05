@@ -1,0 +1,31 @@
+<div class="container">
+  <h1>My profile</h1>
+
+  <div class="row py-4">
+    <h2>My timecapsules</h2>
+    <% @timecapsules.each do |timecapsule| %>
+    <%= link_to(timecapsule_path(timecapsule)) do %>
+      <div class="card col-sm-4 mb-4 mb-sm-4 p-4">
+        <h3><%= timecapsule.name %></h3>
+      </div>
+    <% end %>
+    <% end %>
+    <div class="card col-sm-4 mb-4 mb-sm-4 text-center">
+      <%= link_to(new_timecapsule_path) do %>
+        <p>Create new</p>
+        <div><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg></div>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="row py-4">
+    <h2>My memoryboxes</h2>
+    <% @memoryboxes.each do |memorybox| %>
+    <%= link_to(ownmemories_path(memorybox)) do %>
+      <div class="card col-sm-4 mb-4 mb-sm-4 p-4">
+        <h3><%= memorybox.title %></h3>
+      </div>
+    <% end %>
+    <% end %>
+  </div>
+</div>

@@ -3,4 +3,9 @@ class PagesController < ApplicationController
 
   def home
   end
+
+  def profile
+    @timecapsules = current_user.timecapsules
+    @memoryboxes = current_user.memoryboxes
+  end
 end
