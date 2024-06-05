@@ -9,6 +9,8 @@ class TimecapsulesController < ApplicationController
   end
 
   def show
+    @memorybox = Memorybox.new(timecapsule: @timecapsule)
+
   end
 
   def create
@@ -20,14 +22,14 @@ class TimecapsulesController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
-    
+
   end
 
   def destroy
     @timecapsule.user = current_user
 
     if @timecapsule.destroy
-      redirect_to timecapsule_path(@timecapsule), notice: "Timecapsule was successfully destroy."
+      redirect_to timecapsule_path(@timecapsule), notice: "Timecapsule was successfully destroyed."
     else
       head :no_content
     end
@@ -41,5 +43,9 @@ class TimecapsulesController < ApplicationController
 
   def timecapsule_params
     params.require(:timecapsule).permit(:name)
+  end
+
+  def memorybox_params
+    params.require
   end
 end

@@ -11,11 +11,11 @@
   flex-direction: column;
   flex: 0 0 100%;
   padding: 20px;
-  background: var(--white);
+  background: $pale-mauve;
   border-radius: 12px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 15%);
   scroll-snap-align: start;
-  transition: all 0.2s;
+  transition: all 0.3s;
 }
 
 .card:not(:last-child) {
@@ -44,14 +44,14 @@
   display: inline-block;
   text-decoration: none;
   color: white;
-  background: $yellow;
+  background: $highlight-color;
   padding: 6px 12px;
   border-radius: 8px;
-  transition: background 0.2s;
+  transition: background 0.3s;
 }
 
 .card:hover .card-link {
-  background: $yellow;
+  background: $highlight-color;
 }
 
 .cards::-webkit-scrollbar {
