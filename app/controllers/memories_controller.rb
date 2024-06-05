@@ -9,6 +9,7 @@ class MemoriesController < ApplicationController
     @memory = Memory.new(memory_params)
     @memory.memorybox = @memorybox
 
+
     if @memory.save
       redirect_to ownmemories_path(@memorybox)
     else
@@ -28,9 +29,20 @@ class MemoriesController < ApplicationController
     end
   end
 
+  def destroy
+    @memory = Memory.find(params[:id])
+    @memorybox = Memorybox.find(params[:memorybox_id])
+
+    if @memory.destroy
+      redirect_to ownmemories_path(@memorybox), notice: "Memory was successfully destroy."
+    else
+      head :no_content
+    end
+  end
+
   private
 
   def memory_params
-    params.require(:memory).permit(:text, :date_of_the_memory)
+    params.require(:memory).permit(:text, :date_of_the_memory, :media)
   end
 end
