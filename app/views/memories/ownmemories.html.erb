@@ -1,0 +1,7 @@
+<h1><%= @timecapsule.name %></h1>
+
+<p> <%= @memorybox.title %> </p>
+
+<% @memories.each do |memory| %>
+  <p><%= memory.text %></p>
+<% end %>
