@@ -1,0 +1,11 @@
+<h1>Create a new memory</h1>
+<p>Find me in app/views/memoryboxes/new.html.erb</p>
+<%= simple_form_for [@timecapsule, @memorybox] do |f| %>
+  <div class="form-inputs">
+    <%= f.input :title %>
+  </div>
+
+  <div class="form-actions mt-4">
+    <%= f.button :submit, class: "btn btn-primary mb-4" %>
+  </div>
+<% end %>

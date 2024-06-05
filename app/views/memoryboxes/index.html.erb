@@ -1,0 +1,11 @@
+<h1>Memoryboxes#index</h1>
+<p>Find me in app/views/memoryboxes/index.html.erb</p>
+
+<div class="container row">
+  <% @memoryboxes.each do |mbox| %>
+  <h2><%= mbox.title %></h2>
+  <p><%= mbox.user.email %></p>
+  <% end %>
+
+  <%= link_to "Go home", root_path %>
+</div>
