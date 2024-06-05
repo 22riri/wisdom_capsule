@@ -17,7 +17,7 @@ class MemoryboxesController < ApplicationController
     @memorybox.timecapsule = @timecapsule
 
     if @memorybox.save
-      redirect_to ownmemories_path
+      redirect_to ownmemories_path(@memorybox)
     else
       render :new, status: :unprocessable_entity
     end
