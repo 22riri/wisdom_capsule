@@ -1,17 +1,21 @@
 <h1>Profile name</h1>
-<div class="row row-cols-1 row-cols-md-2 g-4">
-  <div class="col">
-    <% @timecapsules.each do |timecapsule| %>
-    <div class="card">
-      <img src="..." class="card-img-top" alt="...">
-      <div class="card-body">
-      <h5 class="card-title"> <%= timecapsule.name %> </h5>
-      <p class="card-text">Description</p>
-      <div class="card-footer">
-        <small class="text-body-secondary"><%= Time.now %></small>
-      </div>
-    </div>
-    </div>
-    <% end %>
+<div class="container">
+  <h2>Scrolling Card UI With Flexbox</h2>
+  <div class="">
+    <ul class="cards d-flex">
+      <% @timecapsules.each do |timecapsule| %>
+        <li class="card">
+          <div>
+            <h3 class="card-title"><%= timecapsule.name %></h3>
+            <div class="card-content">
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            </div>
+          </div>
+          <div class="card-link-wrapper">
+            <a href="" class="card-link">Click!</a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
   </div>
 </div>
