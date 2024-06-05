@@ -15,7 +15,7 @@ Rails.application.routes.draw do
     resources :memories, only: [:new, :create, :show, :destroy]
   end
 
-    get "ownmemories", to: "memories#ownmemories", as: :ownmemories
+  get "/memoryboxes/:memorybox_id/ownmemories", to: "memories#ownmemories", as: :ownmemories
 
   # Defines the root path route ("/")
   # root "posts#index"
