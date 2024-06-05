@@ -1,8 +1,17 @@
-<h1>Pages#index</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
-<%= @timecapsules %>
-<div class="row">
-<% @timecapsules.each do |timecapsule| %>
-  <%= timecapsule.name %>
-  <% end %>
+<h1>Profile name</h1>
+<div class="row row-cols-1 row-cols-md-2 g-4">
+  <div class="col">
+    <% @timecapsules.each do |timecapsule| %>
+    <div class="card">
+      <img src="..." class="card-img-top" alt="...">
+      <div class="card-body">
+      <h5 class="card-title"> <%= timecapsule.name %> </h5>
+      <p class="card-text">Description</p>
+      <div class="card-footer">
+        <small class="text-body-secondary"><%= Time.now %></small>
+      </div>
+    </div>
+    </div>
+    <% end %>
+  </div>
 </div>

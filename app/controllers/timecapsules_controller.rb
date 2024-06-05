@@ -4,6 +4,10 @@ class TimecapsulesController < ApplicationController
     @timecapsules = Timecapsule.all
   end
 
+  def new
+    @timecapsule = Timecapsule.new
+  end
+
   def show
   end
 
@@ -12,7 +16,7 @@ class TimecapsulesController < ApplicationController
     @timecapsule.user = current_user
 
     if @timecapsule.save
-      redirect_to timecapsules_url(@timecapsule), notice: "Timecapsule was successfully created."
+      redirect_to timecapsule_path(@timecapsule), notice: "Timecapsule was successfully created."
     else
       render :new, status: :unprocessable_entity
     end
@@ -23,7 +27,7 @@ class TimecapsulesController < ApplicationController
     @timecapsule.user = current_user
 
     if @timecapsule.destroy
-      redirect_to timecapsule_url(@timecapsule), notice: "Timecapsule was successfully destroy."
+      redirect_to timecapsule_path(@timecapsule), notice: "Timecapsule was successfully destroy."
     else
       head :no_content
     end
