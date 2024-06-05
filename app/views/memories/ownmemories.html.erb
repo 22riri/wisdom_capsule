@@ -1,6 +1,6 @@
-<h1>My own Memories</h1>
+<h1><%= @timecapsule.name %></h1>
 
-<p>Here are my own memories</p>
+<p> <%= @memorybox.title %> </p>
 
 <% @memories.each do |memory| %>
   <p><%= memory.text %></p>
