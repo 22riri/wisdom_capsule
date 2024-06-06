@@ -1,25 +1,52 @@
-<% if @memorybox.present? %>
-  <h1><%= @time_capsule.name %></h1>
-  <h2><%= @memorybox.title %> memorybox</h2>
-  <div class="w-100">
-    <% @memories.each do |memory| %>
-      <%= memory.text %>
-      <% if memory.media.present? %>
-        <div class="w-50">
-          <div><%= image_tag memory.media if memory.media.blob.content_type.starts_with?('image/') %></div>
-        </div>
-        <div class="w-50">
-          <%= video_tag memory.media, controls: true if memory.media.blob.content_type.starts_with?('video/') %>
-        </div>
-        <div class="w-50">
-          <%= audio_tag memory.media, controls: true if memory.media.blob.content_type.starts_with?('audio/') %>
-        </div>
-      <% end %>
-      <div><%= link_to "Remove my memory", memorybox_memory_path(@memorybox, memory), data: { turbo_method: :delete, turbo_confirm: "Are you sure?"} %></div>
+<div class="big_div">
+  <div class="info_div">
+    <% if @memorybox.present? %>
+      <h1 class="timecapsule-name"><%= @time_capsule.name %></h1>
+      <h2 class="memorybox-title"><%= @memorybox.title %> memorybox</h2>
+    <% else %>
+      <h1>You don't have memories in this memory box</h1>
     <% end %>
   </div>
-<% else %>
-  <h1>You don't have memories in this memory box</h1>
-<% end %>
+  <div class="memory_list">
+    <% @memories.each do |memory| %>
+      <%# <%= memory.text %>
+      <%# <%= memory.date_of_memory %>
+        <% if memory.media.present? %>
+        <% if memory.media.blob.content_type.starts_with?('image/') %>
+            <div class="memory_card">
+              <div class="media_memory">
+              <%= image_tag memory.media  %>
+              </div>
+              <%= memory.text %>
+              <%= memory.date_of_memory %>
+              <div>image</div>
+              <%= link_to "Remove my memory", memorybox_memory_path(@memorybox, memory), data: { turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+
+          </div>
+        <% elsif memory.media.blob.content_type.starts_with?('video/') %>
+          <div class="memory_card">
+             <div class="media_memory">
+            <%= video_tag memory.media, controls: true %>
+            </div>
+            <%= memory.text %>
+            <%= memory.date_of_memory %>
+            <div>video</div>
+            <%= link_to "Remove my memory", memorybox_memory_path(@memorybox, memory), data: { turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+          </div>
+        <% elsif memory.media.blob.content_type.starts_with?('audio/') %>
+          <div class="memory_card">
+             <div class="media_memory">
+            <%= audio_tag memory.media, controls: true %>
+            </div>
+            <%= memory.text %>
+            <%= memory.date_of_memory %>
+            <div>audio</div>
+            <%= link_to "Remove my memory", memorybox_memory_path(@memorybox, memory), data: { turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+          </div>
+        <% end %>
+      <% end %>
+    <% end %>
+  </div>
+
 
 <%= link_to "create a memory", new_memorybox_memory_path %>

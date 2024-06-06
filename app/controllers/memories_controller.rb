@@ -43,6 +43,6 @@ class MemoriesController < ApplicationController
   private
 
   def memory_params
-    params.require(:memory).permit(:text, :date_of_the_memory, :media)
+    params.require(:memory).permit(:text, :date_of_memory, :media)
   end
 end
