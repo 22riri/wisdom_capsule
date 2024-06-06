@@ -18,7 +18,7 @@ class MemoryboxesController < ApplicationController
     if @memorybox.save
       redirect_to timecapsule_path(@timecapsule)
     else
-      render :new, status: :unprocessable_entity
+      render :new, status: :unprocessable_entity, notice: "Memorybox was not created"
     end
   end
 

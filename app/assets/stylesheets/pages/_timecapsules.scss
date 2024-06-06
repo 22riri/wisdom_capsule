@@ -1,0 +1,45 @@
+.timecapsule-cards {
+  display: grid;
+  grid-template-columns: 300px 300px 300px;
+  grid-template-rows: auto;
+  gap: 20px;
+  padding: 0 20px;
+}
+
+.timecapsule-card {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  background: $pale-mauve;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 15%);
+  scroll-snap-align: start;
+  transition: all 0.3s;
+  width: 300px;
+  height: 200px;
+}
+
+.timecapsule-create-card {
+  position: sticky;
+  top: 0;
+  align-self: flex-start;
+}
+
+.timecapsule-card .card-link {
+  display: inline-block;
+  text-decoration: none;
+  color: white;
+  background: $highlight-color;
+  padding: 6px 12px;
+  border-radius: 8px;
+  transition: background 0.3s;
+}
+
+
+.timecapsule-card:hover .card-link {
+  background: $highlight-color;
+}
+
+.timecapsule-cards::-webkit-scrollbar-thumb {
+  background: $yellow;
+}
