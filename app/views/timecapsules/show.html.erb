@@ -1,10 +1,10 @@
 <div class="container justify-content-start align-items-start">
   <h1> <%= @timecapsule.name %> </h1>
   <h2>Memory boxes</h2>
-  <div class="">
-    <ul class="cards d-flex">
+  <div class="d-flex">
+    <ul class="timecapsule-cards">
       <% @timecapsule.memoryboxes.all.each do |memorybox| %>
-        <li class="card">
+        <li class="timecapsule-card">
           <div>
             <h3 class="card-title"><%= memorybox.title %></h3>
             <div class="card-content">
@@ -17,11 +17,9 @@
           </div>
         </li>
       <% end %>
-      <li class="card">
-        <div>
-          <%= render "memoryboxes/form", timecapsule: @timecapsule, memorybox:@memorybox %>
-        </div>
-      </li>
     </ul>
+    <div class="timecapsule-card timecapsule-create-card">
+        <%= render "memoryboxes/form", timecapsule: @timecapsule, memorybox:@memorybox %>
+    </div>
   </div>
  </div>
