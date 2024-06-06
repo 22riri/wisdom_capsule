@@ -23,6 +23,33 @@
   position: sticky;
   top: 0;
   align-self: flex-start;
+  display: flex;
+  .btn {
+    background: $highlight-color;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 8px;
+    transition: background 0.3s;
+    margin: 0 auto;
+  }
+}
+
+.form-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 6px 12px;
+  border-radius: 8px;
+  transition: background 0.3s;
+  margin: 0 auto;
+  .btn {
+    background: $highlight-color;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 8px;
+    transition: background 0.3s;
+    margin: 6.5px auto 0 auto;
+  }
 }
 
 .timecapsule-card .card-link {
@@ -37,9 +64,41 @@
 
 
 .timecapsule-card:hover .card-link {
-  background: $highlight-color;
+  background: $yellow;
+  transition: background 0.3s;
 }
 
 .timecapsule-cards::-webkit-scrollbar-thumb {
   background: $yellow;
+}
+
+.card-link {
+  display: inline-block;
+  text-decoration: none;
+  color: white;
+  background: $yellow;
+  padding: 6px 12px;
+  border-radius: 8px;
+  transition: background 0.3s;
+    a {
+      text-decoration: none;
+    }
+}
+
+.timecapsule-card .card-link-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: auto;
+  a {
+    text-decoration: none;
+    color: $gray;
+  }
+}
+
+.form-inputs-tc {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
 }
