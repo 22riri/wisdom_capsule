@@ -1,9 +1,13 @@
 <%= simple_form_for [@timecapsule, @memorybox] do |f| %>
-  <div class="form-inputs">
-    <%= f.input :title %>
+  <div class="form-inputs-tc">
+    <div class="w-100">
+      <%= f.input :title %>
+    </div>
   </div>
 
   <div class="form-actions mt-4">
-    <%= f.button :submit, class: "btn btn-primary mb-4" %>
+    <div class="card-link-wrapper">
+      <%= f.button :submit, class:"text-black" %>
+    </div>
   </div>
 <% end %>
