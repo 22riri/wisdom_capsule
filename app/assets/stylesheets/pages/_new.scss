@@ -1,6 +1,12 @@
 h1 {
   font-family: $big-header;
 }
+
+h2 {
+  font-family: $big-header;
+  text-align: center;
+  padding: 2%;
+}
 .text-center{
   text-align: center;
 }
@@ -15,7 +21,7 @@ h1 {
   border-radius: 2%;
   padding: 2%;
   margin: 5%;
-  margin-top: 5%;
+  margin-top: 3%;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 15%);;
 }
 
@@ -38,9 +44,16 @@ h1 {
   text-align: center;
 }
 
-.simple_form.new_user + a {
+.simple_form.new_user + a + a {
   display: block;
   text-align: center;
   margin: 2%;
+  color: $highlight-color;
+}
+
+a {
+  display: block;
+  text-align: center;
+  margin: 1%;
   color: $highlight-color;
 }
