@@ -17,6 +17,8 @@ Rails.application.routes.draw do
 
   get "/memoryboxes/:memorybox_id/ownmemories", to: "memories#ownmemories", as: :ownmemories
 
+  get "/profile", to: "pages#profile", as: :profile
+
   # Defines the root path route ("/")
   # root "posts#index"
 end
