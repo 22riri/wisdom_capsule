@@ -6,4 +6,5 @@ class User < ApplicationRecord
   has_many :timecapsules
   has_many :memoryboxes
   has_many :memories, through: :memoryboxes
+  has_one_attached :media
 end
