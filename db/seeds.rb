@@ -33,5 +33,5 @@ memorybox1 = Memorybox.create(title: "vacations", timecapsule_id: timecapsule1.i
 
 puts "creating 2 memories"
 
-Memory.create(text:"The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham", date_of_memory:"2024-06-01", memorybox_id:memorybox1.id )
-Memory.create(text:"undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum", date_of_memory: "2024-06-02", memorybox_id: memorybox1.id)
+Memory.create(title: "Philine", text:"The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham", date_of_memory:"2024-06-01", memorybox_id:memorybox1.id )
+Memory.create(title: "Feline", text:"undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum", date_of_memory: "2024-06-02", memorybox_id: memorybox1.id)

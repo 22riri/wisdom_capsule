@@ -3,6 +3,7 @@
 <p>You can create a new memory</p>
 
 <%= simple_form_for [@memorybox, @memory] do |f| %>
+  <%= f.input :title %>
   <%= f.input :text %>
   <%= f.input :media, as: :file %>
   <%= f.input :date_of_memory %>

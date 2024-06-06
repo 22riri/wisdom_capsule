@@ -1,10 +1,11 @@
 .memory_card{
   flex: 0 1 calc(25% - 20px); /* 25% width minus the total horizontal margin */
   margin: 10px;
-  background-color: #dcdcdc;
+  background-color: #ffffff;
   padding: 20px;
   text-align: center;
   box-sizing: border-box;
+  border-radius: 8px;
 
 }
 
@@ -14,7 +15,8 @@
   justify-content: space-between;
   width: 100%;
   padding: 20px;
-  box-sizing: border-box;}
+  box-sizing: border-box;
+}
 
 .big_div {
   display: flex;
@@ -50,7 +52,7 @@
     object-fit: cover;
 }
 
-.media_memory audio {
+.media-container audio {
   width: 100%;
 }
 
