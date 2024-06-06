@@ -3,5 +3,5 @@ class Memory < ApplicationRecord
 
   has_one_attached :media
 
-  validates :text, presence: true
+  validates :text, :title, presence: true
 end
