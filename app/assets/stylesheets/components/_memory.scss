@@ -12,7 +12,6 @@
 .memory_list {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
   width: 100%;
   padding: 20px;
   box-sizing: border-box;
@@ -21,7 +20,6 @@
 .big_div {
   display: flex;
   flex-direction: column;
-  align-items: center;
   width: 100%;;
 }
 
@@ -108,7 +106,7 @@
   font-family: Spicy Rice;
   transition-duration: 0.2s;
   position:absolute;
-  top: 120px;
+  top: 140px;
   right: 0;
   margin: 10px;
   margin-right: 40px;
@@ -187,3 +185,42 @@
 // box-shadow: 0 5px 15px black;
 // scroll-snap-align: start;
 // transition: all 0.3s;
+
+.pill-button-image{
+  background-color: #e798de;
+  border: none;
+  color: black;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 20px;
+}
+
+.pill-button-video{
+  background-color: #2BD886;
+  border: none;
+  color: black;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 20px;
+}
+
+.pill-button-audio{
+  background-color: #0D6EFD;
+  border: none;
+  color: black;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 20px;
+}
