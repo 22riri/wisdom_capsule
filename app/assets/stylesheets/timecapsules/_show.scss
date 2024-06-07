@@ -1,0 +1,10 @@
+.emptytimecapsulemessage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: large;
+  font-family: $text-font;
+  color: $highlight-color ;
+  font-weight: bold;
+  text-align: center;
+}
