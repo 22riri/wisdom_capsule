@@ -1,8 +1,8 @@
 <div class="big_div">
   <div class="info_div">
     <% if @memorybox.present? %>
-      <h1 class="timecapsule-name"><%= @time_capsule.name %></h1>
-      <h2 class="memorybox-title"><%= @memorybox.title %> memorybox</h2>
+      <h1 class="timecapsule-name"><%= @time_capsule.name %>'s time capsule</h1>
+      <h2 class="memorybox-title"><%= @memorybox.title %>'s memorybox</h2>
     <% else %>
       <h1>You don't have memories in this memory box</h1>
     <% end %>
@@ -23,7 +23,9 @@
                 <div class="date"><%= memory.date_of_memory %></div>
               </div>
               <div class="text"><%= memory.text %></div>
-              <%= link_to "Remove my memory", memorybox_memory_path(@memorybox, memory), data: { turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+              <div class="remove_button_image">
+                <%= link_to "Remove my memory", memorybox_memory_path(@memorybox, memory), class:"btn", data: { turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+              </div>
             </div>
         <% elsif memory.media.blob.content_type.starts_with?('video/') %>
           <div class="memory_card">
@@ -36,7 +38,9 @@
               <div class="date"><%= memory.date_of_memory %></div>
             </div>
             <div class="text"><%= memory.text %></div>
-            <%= link_to "Remove my memory", memorybox_memory_path(@memorybox, memory), data: { turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+            <div class="remove_button_video">
+              <%= link_to "Remove my memory", memorybox_memory_path(@memorybox, memory), class:"btn", data: { turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+            </div>
           </div>
         <% elsif memory.media.blob.content_type.starts_with?('audio/') %>
           <div class="memory_card">
@@ -49,12 +53,17 @@
               <div class="date"><%= memory.date_of_memory %></div>
             </div>
             <div class="text"><%= memory.text %></div>
-            <%= link_to "Remove my memory", memorybox_memory_path(@memorybox, memory), data: { turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+            <div class="remove_button_audio">
+              <%= link_to "Remove my memory", memorybox_memory_path(@memorybox, memory), class:"btn", data: { turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+            </div>
           </div>
         <% end %>
       <% end %>
     <% end %>
   </div>
 
+  <div class="nice_button">
+   <%= link_to "create a memory", new_memorybox_memory_path, class:"btn" %>
+  </div>
 
-<%= link_to "create a memory", new_memorybox_memory_path %>
+</div>
