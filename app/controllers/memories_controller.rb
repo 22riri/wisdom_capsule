@@ -23,7 +23,7 @@ class MemoriesController < ApplicationController
 
     if @memorybox.present?
       @time_capsule = Timecapsule.find(@memorybox.timecapsule_id)
-      @memories = @memorybox.memories
+      @memories = @memorybox.memories.includes(media_attachment: :blob)
     else
       # alert
     end
