@@ -97,3 +97,38 @@
     margin-right: 40px;
   }
 }
+
+.content-container {
+  width: 80%;
+  margin: 40px auto;
+}
+.cards-container {
+  // display: flex;
+  // flex-wrap: wrap;
+  background-color: #ffffff;
+  width: 100%;
+  margin-top: 40px;
+  padding: 32px 32px 0 32px;
+  border-radius: 5px;
+}
+.cards-container .cards {
+  width: 100%;
+}
+.cards-container .card {
+  background-color: #ffffff;
+  border: 1px solid $light-grey;
+}
+.cards-container .card:hover {
+  background-color: #f4f4f4;
+}
+footer {
+  display: block;
+  background-color: $gray;
+  margin-top: 64px;
+}
+.footer-wrapper {
+  color: $light-white;
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px 0;
+}
