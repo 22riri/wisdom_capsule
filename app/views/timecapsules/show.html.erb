@@ -1,8 +1,11 @@
 <div class="container justify-content-start align-items-start">
-  <h1> <%= @timecapsule.name %> </h1>
+  <h1> <%= @timecapsule.name %>'s time capsule </h1>
   <h2>Memory boxes</h2>
   <div class="d-flex">
     <ul class="timecapsule-cards">
+    <%if @timecapsule.memoryboxes.empty?%>
+    <p class = "emptytimecapsulemessage"> You haven't created any memoryboxes yet ... Have fun and happy memoryboxing !</p>
+         <%else%>
       <% @timecapsule.memoryboxes.all.each do |memorybox| %>
         <li class="timecapsule-card">
           <div>
@@ -16,6 +19,7 @@
             <%= link_to 'Memories', ownmemories_path(memorybox) %>
           </div>
         </li>
+      <% end %>
       <% end %>
     </ul>
     <div class="timecapsule-card timecapsule-create-card">
