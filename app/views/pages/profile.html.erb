@@ -2,7 +2,7 @@
   <h1>Welcome, <%= current_user.email %></h1>
   <div class="timecapsules-container cards-container">
     <h2>Update or add time capsules</h2>
-    <%= link_to(new_timecapsule_path, :class => "add btn btn-primary") do %>
+    <%= link_to(new_timecapsule_path, class: "add btn btn-primary") do %>
       <span><i class="fa-solid fa-square-plus"></i> Add time capsule</span>
     <% end %>
     <ul class="cards">
