@@ -1,0 +1,60 @@
+footer {
+  color: $aubergine;
+  background: $pale-mauve;
+  background: linear-gradient(147deg, rgba(233,254,213,1) 0%, rgba(224,215,248,1) 35%, rgba(224,215,248,1) 100%);
+  a {
+    color: $aubergine;
+  }
+  .fa-heart {
+    color: $red;
+  }
+}
+.footer-wrapper {
+  display: flex;
+  height: 100%;
+  width: 80%;
+  margin: 0 auto;
+  .fcontent-1 {
+    flex-grow: 1;
+  }
+}
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  .main-content {
+    flex: 1 0 auto;
+    margin: 40px 0;
+  }
+  .main-content p {
+    line-height: 1;
+    margin-bottom: .5rem;
+  }
+  .follow {
+    line-height: 1;
+    margin-bottom: 0;
+  }
+  .links {
+    flex-shrink: 0;
+  }
+  .links span:first-child a {
+    margin-left: 0;
+  }
+}
+.fcontent-2 {
+  height: 100%;
+  flex-direction: row;
+  align-items: flex-end;
+}
+.connect {
+  list-style-type: none;
+  padding-left: 0;
+}
+.connect li {
+  display: inline-block;
+}
+.connect a {
+  font-size: 2rem;
+}
+.links a {
+  display: inline-block;
+}
