@@ -1,0 +1,164 @@
+.memory_card2{
+  flex: 0 1 calc(25% - 20px); /* 25% width minus the total horizontal margin */
+  margin: 10px;
+  background-color: #ffffff;
+  padding: 20px;
+  text-align: center;
+  box-sizing: border-box;
+  border-radius: 8px;
+
+}
+
+.memory_list2 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.big_div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;;
+}
+
+.info_div {
+  width: 100%;
+  padding: 20px;
+  background-color: #f0f0f0;
+  text-align: center;
+}
+
+.media_memory
+ {
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  position: relative;
+  overflow: hidden;
+  background-color: #000; /* Fallback background color */
+}
+
+
+.media_memory img,
+.media_memory video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.media-container audio {
+  width: 100%;
+}
+
+
+.title{
+  text-align: left;
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+.text{
+  text-align: left;
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+.date{
+  text-align: center;
+  fill: #F2F2F2;
+  color: #888888;
+  font-family: Lato;
+  font-weight: 500px;
+  font-size: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.media-tag{
+  text-align: left;
+  font-family: Lato;
+  font-weight: 500px;
+  font-size: 12px;
+  border-radius: 4px;
+  color: #000000;
+  font-size: 16px;
+}
+
+.info{
+  display: flex;
+  direction: inline;
+  justify-content: space-between;
+}
+
+
+.nice_button{
+//   font-size: 18px;
+//   padding: 10px;
+//   border-radius: 16px;
+//   background-color: rgb(233, 148, 235);
+//   color: black;
+//   border: 2px solid #df83e8;
+  text-decoration: none;
+  font-family: Spicy Rice;
+  transition-duration: 0.2s;
+  position:absolute;
+  top: 120px;
+  right: 0;
+  margin: 10px;
+  margin-right: 40px;
+  .btn {
+    background-color: #CCBDF4;
+  }
+}
+
+.remove_button_audio{
+  text-decoration: none;
+  font-family: Spicy Rice;
+  transition-duration: 0.2s;
+  position: center;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 16px;
+  .btn {
+    background-color: #CCBDF4;
+  }
+}
+
+.remove_button_video{
+  text-decoration: none;
+  font-family: Spicy Rice;
+  transition-duration: 0.2s;
+  position: center;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 16px;
+  .btn {
+    background-color: #CCBDF4;
+  }
+}
+
+.remove_button_image{
+  text-decoration: none;
+  font-family: Spicy Rice;
+  transition-duration: 0.2s;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 16px;
+  .btn {
+    background-color: #CCBDF4;
+  }
+}
+
+
+.btn:hover{
+  font-size: 18px;
+  color: white;
+  border: 2px solid #80bff6;
+}
