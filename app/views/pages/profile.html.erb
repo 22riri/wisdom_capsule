@@ -1,49 +1,53 @@
 <div class="content-container">
   <div class="timecapsules-container cards-container">
+    <h1>Welcome, <%= current_user.email %></h1>
     <div class= "add btn btn-primary rounded-pill">
       <%= link_to "Edit", edit_user_registration_path %>
     </div>
-    <h1>Welcome, <%= current_user.email %></h1>
     <div class="timecapsules-container cards-container">
-      <h2>Update or add time capsules</h2>
-      <%= link_to(new_timecapsule_path, class: "add btn btn-primary") do %>
-        <span><i class="fa-solid fa-square-plus"></i> Add time capsule</span>
+     <h2>Update or add time capsules</h2>
+    <%= link_to(new_timecapsule_path, class: "add btn btn-primary rounded-pill") do %>
+      <span><i class="fa-solid fa-square-plus"></i> Add time capsule</span>
+    <% end %>
+    <ul class="cards">
+    <% if @timecapsules.empty? %>
+      <li>You do not have any time capsule. Click the button to create one.</li>
+    <% end %>
+      <% @timecapsules.each do |timecapsule| %>
+      <li class="card">
+        <h3 class="card-title"><%= timecapsule.name %></h3>
+        <div class="contributors-container">
+          <p>
+            <span class="title">Contributors:</span>
+            <span class="contributors">Aunty Amina and Popop</span>
+          </p>
+        </div>
+        <%= link_to "Update", timecapsule_path(timecapsule), class: "btn btn-success rounded-pill" %>
+      </li>
       <% end %>
-      <ul class="cards">
-        <% @timecapsules.each do |timecapsule| %>
-        <li class="card">
-          <h3 class="card-title"><%= timecapsule.name %></h3>
-          <div class="contributors-container">
-            <p>
-              <span class="title">Contributors:</span>
-              <span class="contributors">Aunty Amina and Popop</span>
-            </p>
-          </div>
-          <%= link_to "Update", timecapsule_path(timecapsule), class: "btn btn-success" %>
-        </li>
-        <% end %>
       </ul>
     </div>
-
-    <div class="memoryboxes-container cards-container">
-      <h2>Your memoryboxes</h2>
-      <ul class="cards">
-        <% @memoryboxes.each do |memorybox| %>
-        <li class="card">
-          <h3 class="card-title"><%= memorybox.title %></h3>
-          <div class="contents-container">
-            <p>Contains:</p>
-            <div class="memorybox-contents">
-              <span class="memorybox-item"><i class="fa-solid fa-file-lines"></i></span>
-              <span class="memorybox-item"><i class="fa-solid fa-file-video"></i></span>
-              <span class="memorybox-item"><i class="fa-solid fa-file-image"></i></span>
-              <span class="memorybox-item"><i class="fa-solid fa-file-audio"></i></span>
-            </div>
+  <div class="memoryboxes-container cards-container">
+    <h2>Your memoryboxes</h2>
+    <ul class="cards">
+    <% if @memoryboxes.empty? %>
+      <li>You have no memory boxes</li>
+    <% end %>
+    <% @memoryboxes.each do |memorybox| %>
+      <li class="card">
+        <h3 class="card-title"><%= memorybox.title %></h3>
+        <div class="contents-container">
+          <p>Contains:</p>
+          <div class="memorybox-contents">
+            <span class="memorybox-item"><i class="fa-solid fa-file-lines"></i></span>
+            <span class="memorybox-item"><i class="fa-solid fa-file-video"></i></span>
+            <span class="memorybox-item"><i class="fa-solid fa-file-image"></i></span>
+            <span class="memorybox-item"><i class="fa-solid fa-file-audio"></i></span>
           </div>
-          <%= link_to "View memories", ownmemories_path(memorybox), class: "btn btn-success" %>
-        </li>
-        <% end %>
-      </ul>
-    </div>
+        </div>
+        <%= link_to "View memories", ownmemories_path(memorybox), class: "btn btn-success rounded-pill" %>
+      </li>
+    <% end %>
+    </ul>
   </div>
 </div>
