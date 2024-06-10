@@ -6,7 +6,6 @@ class MemoryboxesController < ApplicationController
   def new
     @timecapsule = Timecapsule.find(params[:timecapsule_id])
     @memorybox = Memorybox.new
-
   end
 
   def create
