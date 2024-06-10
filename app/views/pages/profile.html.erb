@@ -1,7 +1,11 @@
 <div class="content-container">
-  <h1>Welcome, <%= current_user.email %></h1>
   <div class="timecapsules-container cards-container">
-    <h2>Update or add time capsules</h2>
+    <h1>Welcome, <%= current_user.email %></h1>
+    <div class= "add btn btn-primary rounded-pill">
+      <%= link_to "Edit", edit_user_registration_path %>
+    </div>
+    <div class="timecapsules-container cards-container">
+     <h2>Update or add time capsules</h2>
     <%= link_to(new_timecapsule_path, class: "add btn btn-primary rounded-pill") do %>
       <span><i class="fa-solid fa-square-plus"></i> Add time capsule</span>
     <% end %>
@@ -21,9 +25,8 @@
         <%= link_to "Update", timecapsule_path(timecapsule), class: "btn btn-success rounded-pill" %>
       </li>
       <% end %>
-    </ul>
-  </div>
-
+      </ul>
+    </div>
   <div class="memoryboxes-container cards-container">
     <h2>Your memoryboxes</h2>
     <ul class="cards">
