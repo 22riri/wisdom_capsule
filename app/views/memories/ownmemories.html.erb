@@ -24,7 +24,7 @@
               </div>
               <div class="text"><%= memory.text %></div>
               <div class="remove_button_image">
-                <%= link_to "Remove my memory", memorybox_memory_path(@memorybox, memory), class:"btn", data: { turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+                <%= link_to "Remove my memory", memorybox_memory_path(@memorybox, memory), class:"btn rounded-pill", data: { turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
               </div>
             </div>
         <% elsif memory.media.blob.content_type.starts_with?('video/') %>
@@ -39,7 +39,7 @@
             </div>
             <div class="text"><%= memory.text %></div>
             <div class="remove_button_video">
-              <%= link_to "Remove my memory", memorybox_memory_path(@memorybox, memory), class:"btn", data: { turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+              <%= link_to "Remove my memory", memorybox_memory_path(@memorybox, memory), class:"btn rounded-pill", data: { turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
             </div>
           </div>
         <% elsif memory.media.blob.content_type.starts_with?('audio/') %>
@@ -54,7 +54,7 @@
             </div>
             <div class="text"><%= memory.text %></div>
             <div class="remove_button_audio">
-              <%= link_to "Remove my memory", memorybox_memory_path(@memorybox, memory), class:"btn", data: { turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+              <%= link_to "Remove my memory", memorybox_memory_path(@memorybox, memory), class:"btn rounded-pill", data: { turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
             </div>
           </div>
         <% end %>
@@ -63,7 +63,7 @@
   </div>
 
   <div class="nice_button">
-   <%= link_to "create a memory", new_memorybox_memory_path, class:"btn" %>
+   <%= link_to "create a memory", new_memorybox_memory_path, class:"btn rounded-pill" %>
   </div>
 
 </div>
