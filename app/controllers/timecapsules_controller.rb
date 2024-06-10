@@ -1,5 +1,5 @@
 class TimecapsulesController < ApplicationController
-  before_action :set_timecapsule, only: [ :show ]
+  before_action :set_timecapsule, only: [:show]
   def index
     @timecapsules = Timecapsule.all
   end
@@ -10,7 +10,6 @@ class TimecapsulesController < ApplicationController
 
   def show
     @memorybox = Memorybox.new(timecapsule: @timecapsule)
-
   end
 
   def create
@@ -22,7 +21,6 @@ class TimecapsulesController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
-
   end
 
   def destroy

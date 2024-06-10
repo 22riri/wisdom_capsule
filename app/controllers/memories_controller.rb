@@ -9,7 +9,6 @@ class MemoriesController < ApplicationController
     @memory = Memory.new(memory_params)
     @memory.memorybox = @memorybox
 
-
     if @memory.save
       redirect_to ownmemories_path(@memorybox)
     else
