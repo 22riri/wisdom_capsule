@@ -1,8 +1,8 @@
 <div class="content-container">
   <div class="timecapsules-container cards-container">
-    <h1>Welcome, <%= current_user.email %></h1>
-    <div class= "add btn btn-primary rounded-pill">
-      <%= link_to "Edit", edit_user_registration_path %>
+    <h1>Welcome, <%= current_user.username %></h1>
+    <div class= "add">
+      <%= link_to "Edit profile", edit_user_registration_path, class:"add btn btn-primary rounded-pill" %>
     </div>
     <div class="timecapsules-container cards-container">
      <h2>Update or add time capsules</h2>
