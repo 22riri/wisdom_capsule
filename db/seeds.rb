@@ -17,21 +17,18 @@ User.destroy_all
 
 puts "Create amigo imaginario"
 
-user1 = User.create(email: "amigoo@gmail.com", password:"123456")
-user2 = User.create(email: "outroamigo@gmail.com", password:"123456")
+user1 = User.create(email: "amigoo@gmail.com", password: "123456", username: "amigo")
+user2 = User.create(email: "outroamigo@gmail.com", password: "123456", username: "automi")
 
+puts "creating a time capsule for #{user1.username}..."
 
-puts "creating time capsule"
+timecapsule1 = Timecapsule.create(name: "Caixa teste", user_id: user1.id)
 
-timecapsule1 = Timecapsule.create(name:"Caixa teste", user_id: user1.id)
+puts "Creating 1 memorybox for #{user2.username}..."
 
+memorybox1 = Memorybox.create(title: "vacations", timecapsule_id: timecapsule1.id, user_id: user2.id)
 
-puts "Creating 1 memorybox"
+puts "creating 2 memories..."
 
-memorybox1 = Memorybox.create(title: "vacations", timecapsule_id: timecapsule1.id, user_id: user2.id )
-
-
-puts "creating 2 memories"
-
-Memory.create(title: "Philine", text:"The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham", date_of_memory:"2024-06-01", memorybox_id:memorybox1.id )
-Memory.create(title: "Feline", text:"undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum", date_of_memory: "2024-06-02", memorybox_id: memorybox1.id)
+Memory.create(title: "Philine", text: "The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham", date_of_memory: "2024-06-01", memorybox_id:memorybox1.id )
+Memory.create(title: "Feline", text: "undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum", date_of_memory: "2024-06-02", memorybox_id: memorybox1.id)
