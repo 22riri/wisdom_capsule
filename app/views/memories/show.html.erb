@@ -4,7 +4,7 @@
           <% if  @memory.media.blob.content_type.starts_with?('image/') %>
               <div class="memory_card2">
                 <div class="media_memory2">
-                  <%= image_tag  @memory.media  %>
+                  <%= image_tag  @memory.media, class: "memory-show-media"  %>
                 </div>
                 <div class="title"><%=  @memory.title %></div>
                 <div class="info">
@@ -18,8 +18,8 @@
               </div>
           <% elsif  @memory.media.blob.content_type.starts_with?('video/') %>
             <div class="memory_card2">
-              <div class="media_memory2">
-              <%= video_tag  @memory.media, controls: true %>
+              <div class="memory-show-video-container">
+              <%= video_tag  @memory.media, controls: true, class: "memory-show-video"%>
               </div>
               <div class="title"><%=  @memory.title %></div>
               <div class="info">
@@ -34,7 +34,7 @@
           <% elsif  @memory.media.blob.content_type.starts_with?('audio/') %>
             <div class="memory_card2">
               <div class="media_memory2">
-              <%= audio_tag  @memory.media, controls: true %>
+              <%= audio_tag  @memory.media, controls: true, class: "memory-show-media" %>
               </div>
               <div class="title"><%=  @memory.title %></div>
               <div class="info">
