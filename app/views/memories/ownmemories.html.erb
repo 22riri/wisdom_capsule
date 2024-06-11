@@ -43,6 +43,11 @@
               <div class="date"><%= memory.date_of_memory %></div>
             </div>
             <div class="text"><%= memory.text %></div>
+             <div class="timecapsules-container cards-container">
+                <div class="add btn btn-primary rounded-pill">
+                  <%= link_to "see this memory", memorybox_memory_path(@memorybox, memory) %>
+                </div>
+              </div>
             <div class="remove_button_video">
               <%= link_to "Remove my memory", memorybox_memory_path(@memorybox, memory), class:"btn rounded-pill", data: { turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
             </div>
@@ -58,6 +63,11 @@
               <div class="date"><%= memory.date_of_memory %></div>
             </div>
             <div class="text"><%= memory.text %></div>
+             <div class="timecapsules-container cards-container">
+                <div class="add btn btn-primary rounded-pill">
+                  <%= link_to "see this memory", memorybox_memory_path(@memorybox, memory) %>
+                </div>
+              </div>
             <div class="remove_button_audio">
               <%= link_to "Remove my memory", memorybox_memory_path(@memorybox, memory), class:"btn rounded-pill", data: { turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
             </div>
