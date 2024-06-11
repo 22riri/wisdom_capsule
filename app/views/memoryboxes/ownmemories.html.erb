@@ -9,10 +9,11 @@
   </div>
   <div class="memory_list">
     <% @memories.each do |memory| %>
+       <%#= cl_image_tag memory.media.attached? %>
       <%# <%= memory.text %>
       <%# <%= memory.date_of_memory %>
         <% if memory.media.present? %>
-        <% if memory.media.blob.content_type.starts_with?('image/') %>
+          <% if memory.media.blob.content_type.starts_with?('image/') %>
             <div class="memory_card">
               <div class="media_memory">
                 <%= image_tag memory.media  %>
@@ -29,7 +30,7 @@
                 </div>
               </div>
             </div>
-        <% elsif memory.media.blob.content_type.starts_with?('video/') %>
+          <% elsif memory.media.blob.content_type.starts_with?('video/') %>
           <div class="memory_card">
              <div class="media_memory">
             <%= video_tag memory.media, controls: true %>
@@ -46,7 +47,7 @@
                 </div>
               </div>
           </div>
-        <% elsif memory.media.blob.content_type.starts_with?('audio/') %>
+          <% elsif memory.media.blob.content_type.starts_with?('audio/') %>
           <div class="memory_card">
              <div class="media_memory">
             <%= audio_tag memory.media, controls: true %>
@@ -63,7 +64,7 @@
                 </div>
               </div>
           </div>
-        <% end %>
+          <% end %>
       <% end %>
     <% end %>
   </div>

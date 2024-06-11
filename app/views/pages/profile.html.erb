@@ -18,8 +18,8 @@
         <h3 class="card-title"><%= timecapsule.name %></h3>
         <div class="contributors-container">
           <p>
-            <span class="title">Contributors:</span>
-            <span class="contributors">Aunty Amina and Popop</span>
+            <span class="title">Date of creation:</span>
+            <span class="contributors"> <%= timecapsule.created_at.to_formatted_s(:long_ordinal)  %></span>
           </p>
         </div>
         <%= link_to "Update", timecapsule_path(timecapsule), class: "btn btn-success rounded-pill" %>
