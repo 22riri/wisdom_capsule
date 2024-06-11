@@ -1,0 +1,64 @@
+<h1>Memories</h1>
+<div class="memory_list2">
+  <% if @memory.media.present? %>
+          <% if  @memory.media.blob.content_type.starts_with?('image/') %>
+              <div class="memory_card2">
+                <div class="media_memory2">
+                  <%= image_tag  @memory.media, class: "memory-show-media"  %>
+                </div>
+                <div class="title"><%=  @memory.title %></div>
+                <div class="info">
+                  <div class="media-tag">image</div>
+                  <div class="date"><%=  @memory.date_of_memory %></div>
+                </div>
+                <div class="text"><%=  @memory.text %></div>
+                <div class="remove_button_image">
+                  <%= link_to "Remove my memory", memorybox_memory_path(@memorybox,  @memory), class:"btn", data: { turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+                   <div>
+                      <%= link_to "Back", ownmemories_path %>
+                   </div>
+                </div>
+              </div>
+          <% elsif  @memory.media.blob.content_type.starts_with?('video/') %>
+            <div class="memory_card2">
+              <div class="memory-show-video-container">
+              <%= video_tag  @memory.media, controls: true, class: "memory-show-video"%>
+              </div>
+              <div class="title"><%=  @memory.title %></div>
+              <div class="info">
+                <div class="media-tag">video</div>
+                <div class="date"><%=  @memory.date_of_memory %></div>
+              </div>
+              <div class="text"><%=  @memory.text %></div>
+              <div class="remove_button_video">
+                <%= link_to "Remove my memory", memorybox_memory_path(@memorybox,  @memory), class:"btn", data: { turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+                 <div>
+                    <%= link_to "Back", ownmemories_path %>
+                  </div>
+              </div>
+            </div>
+          <% elsif  @memory.media.blob.content_type.starts_with?('audio/') %>
+            <div class="memory_card2">
+              <div class="media_memory2">
+              <%= audio_tag  @memory.media, controls: true, class: "memory-show-media" %>
+              </div>
+              <div class="title"><%=  @memory.title %></div>
+              <div class="info">
+                <div class ="media-tag">audio</div>
+                <div class="date"><%=  @memory.date_of_memory %></div>
+              </div>
+              <div class="text"><%=  @memory.text %></div>
+                <div class="remove_button_audio">
+                  <%= link_to "Remove my memory", memorybox_memory_path(@memorybox,  @memory), class:"btn", data: { turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+                    <div>
+                      <%= link_to "Back", ownmemories_path %>
+                    </div>
+                </div>
+              </div>
+          <% end %>
+        <% end %>
+      <div>
+
+     </div>
+  </div>
+</div>

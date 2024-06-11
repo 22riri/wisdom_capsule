@@ -17,21 +17,46 @@ User.destroy_all
 
 puts "Create amigo imaginario"
 
-user1 = User.create(email: "amigoo@gmail.com", password:"123456")
-user2 = User.create(email: "outroamigo@gmail.com", password:"123456")
+user1 = User.create(email: "amigoo@gmail.com", password: "123456", username: "amigo")
+user2 = User.create(email: "outroamigo@gmail.com", password: "123456", username: "automi")
 
+puts "creating a time capsule for #{user1.username}..."
 
-puts "creating time capsule"
+timecapsule1 = Timecapsule.create(name: "Philine", user_id: user1.id)
 
-timecapsule1 = Timecapsule.create(name:"Caixa teste", user_id: user1.id)
+puts "Creating 1 memorybox for #{user1.username}..."
 
+memorybox1 = Memorybox.create(title: "Vacations in Mykonos", timecapsule_id: timecapsule1.id, user_id: user1.id)
 
-puts "Creating 1 memorybox"
+puts "creating 5 memories..."
 
-memorybox1 = Memorybox.create(title: "vacations", timecapsule_id: timecapsule1.id, user_id: user2.id )
+require "open-uri"
+# creer une file
+file = URI.open("https://images.unsplash.com/photo-1586348943529-beaae6c28db9?q=80&w=2815&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
+memory_one = Memory.new(title: "First sunset of the trip", text: "The view was breathtaking", date_of_memory: "2024-06-01", memorybox_id: memorybox1.id)
+memory_one.media.attach(io: file, filename: "nes.png", content_type: "image/png")
+# attacher l image a la memory
+memory_one.save
 
+# Memory.create(title: "Feline", text: "undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum", date_of_memory: "2024-06-02", memorybox_id: memorybox1.id)
 
-puts "creating 2 memories"
+file_two = URI.open("https://static.wikia.nocookie.net/naturerules1/images/f/f2/Bb1a160590bebc84f4a2c9a70f0cb7fd.png/revision/latest?cb=20210316221839")
+memory_two = Memory.new(title: "We met Dolphins", text: "Oh my god we were able to swim with them", date_of_memory: "2024-06-03", memorybox_id: memorybox1.id)
+memory_two.media.attach(io: file_two, filename: "nes.png", content_type: "image/png")
+memory_two.save
 
-Memory.create(title: "Philine", text:"The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham", date_of_memory:"2024-06-01", memorybox_id:memorybox1.id )
-Memory.create(title: "Feline", text:"undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum", date_of_memory: "2024-06-02", memorybox_id: memorybox1.id)
+file_three = URI.open("https://plus.unsplash.com/premium_photo-1661868392234-9d1659f2053e?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
+memory_three = Memory.new(title: "Boat day !", text: "It was so much fun", date_of_memory: "2024-06-04", memorybox_id: memorybox1.id)
+memory_three.media.attach(io: file_three, filename: "nes.png", content_type: "image/png")
+memory_three.save
+
+file_four = URI.open("https://images.unsplash.com/photo-1528495612343-9ca9f4a4de28?q=80&w=2874&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
+memory_four = Memory.new(title: "Craaazy party", text: "What happens in Mykonos stays in Mykonos (hihi)", date_of_memory: "2024-06-05", memorybox_id: memorybox1.id)
+memory_four.media.attach(io: file_four, filename: "nes.png", content_type: "image/png")
+memory_four.save
+
+file_five = URI.open("https://plus.unsplash.com/premium_photo-1661690248576-181b6547d026?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
+memory_five = Memory.new(title: "Last day ...", text: "It went by so fast but we made such amazing memories together  !", date_of_memory: "2024-06-06", memorybox_id: memorybox1.id)
+memory_five.media.attach(io: file_five, filename: "nes.png", content_type: "image/png")
+memory_five.save
+puts "Database seeded"

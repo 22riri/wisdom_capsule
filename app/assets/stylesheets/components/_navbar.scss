@@ -1,6 +1,7 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: $pale-pink;
+  background: white;
+  border-bottom: 2px solid $citrus-green;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -9,4 +10,30 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 200px;
+}
+
+.dropdown:hover .dropdown-menu {
+  background-color: #E0D7F8;
+  color: $citrus-green;
+}
+
+.dropdown-menu {
+  border-radius: 2%;
+}
+
+.nav-item-active {
+  color: $primary-color;
+  font-family: $big-header;
+}
+
+.nav-link {
+  color: $primary-color;
+  font-size:xx-large;
+}
+
+.navbar-nav {
+  display: inline-flex;
+  align-items: center;
+  width: 200px;
+  justify-content: flex-end;
 }

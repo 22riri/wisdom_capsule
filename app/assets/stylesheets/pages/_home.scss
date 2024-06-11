@@ -9,10 +9,17 @@
   margin: 9%;
   margin-top: 5%;
   border-radius: 2%;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 15%);
+}
+
+#media-memory-home-page {
+  height:40cap;
+  box-sizing: content-box;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 15%);
 }
 
 .big_header {
-  color: $highlight-color ;
+  color: #E9FED5 ;
   font-size: 6rem;
   font-family :$big-header;
   border-radius: 50%;
@@ -29,6 +36,17 @@
 .mottotext {
   font-family: $big-header;
   color: $citrus-green;
+}
+
+#exampleshome {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-around;
+}
+
+.homesecondtitle {
+  text-align: center;
 }
 
 %button{
