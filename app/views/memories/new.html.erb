@@ -7,7 +7,10 @@
   <%= f.input :title %>
   <%= f.input :text %>
   <%= f.input :media, as: :file %>
-  <%= f.input :date_of_memory %>
+  <%= f.input :date_of_memory,
+              :placeholder => "My wonderful memory happened on",
+              as: :string,
+              input_html: { data: { controller: "datepicker" } } %>
   <div class = "finalsubmit">
   <%= f.submit "Submit memory", class: "btn btn-primary rounded-pill" %>
   </div>
