@@ -23,6 +23,11 @@ export default class extends Controller {
     this.#filter("text_memory");
   }
 
+  clearFilter(e) {
+    e.preventDefault();
+    this.#filter("all");
+  }
+
   search(e) {
     const url = new URL(window.location.href);
     url.searchParams.set("media", "all");
@@ -36,6 +41,7 @@ export default class extends Controller {
       .then((response) => response.text())
       .then((data) => {
         this.listTarget.innerHTML = data;
+        console.log(url)
       });
   }
 
