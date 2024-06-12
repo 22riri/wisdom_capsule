@@ -1,13 +1,13 @@
 <%= simple_form_for (@timecapsule) do |f| %>
-  <div class="form-inputs">
+  <div class="form-inputs w-30">
     <%= f.input :name %>
-    <%= f.submit "Create a timecapsule", class: "btn btn-primary rounded-pill" %>
+    <%= f.submit "Create a timecapsule", class: "btn rounded-pill mt-4" %>
     <div class="form-actions mt-4">
     </div>
+     <%= link_to "Back", profile_path, class: "btn rounded-pill mt-4" %>
   </div>
 <% end %>
 
-<%= link_to "Back", profile_path, class: "fw-bold text-" %>
 
 
 <%# flex-box container wrapping the cards and the button %>
