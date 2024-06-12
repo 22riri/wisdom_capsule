@@ -1,0 +1,162 @@
+.nice_button{
+  //   font-size: 18px;
+  //   padding: 10px;
+  //   border-radius: 16px;
+  //   background-color: rgb(233, 148, 235);
+  //   color: black;
+  //   border: 2px solid #df83e8;
+  text-decoration: none;
+  font-family: Spicy Rice;
+  transition-duration: 0.2s;
+  position:absolute;
+  top: 120px;
+  right: 0;
+  margin: 10px;
+  margin-right: 40px;
+  .btn {
+    background-color: #CCBDF4;
+  }
+}
+
+.remove_button_audio{
+  text-decoration: none;
+  font-family: Spicy Rice;
+  transition-duration: 0.2s;
+  position: center;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 16px;
+  .btn {
+    background-color: #CCBDF4;
+  }
+}
+
+.remove_button_video{
+  text-decoration: none;
+  font-family: Spicy Rice;
+  transition-duration: 0.2s;
+  position: center;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 16px;
+  .btn {
+    background-color: #CCBDF4;
+  }
+}
+
+.remove_button_image{
+  text-decoration: none;
+  font-family: Spicy Rice;
+  transition-duration: 0.2s;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 16px;
+  .btn {
+    background-color: #CCBDF4;
+  }
+}
+
+.btn {
+  font-family: $text-font;
+  background: $highlight-color;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 8px;
+  transition: background 0.3s;
+}
+
+
+.btn:hover{
+  color: white;
+  border-color: #80bff6;
+}
+
+
+.nice_button{
+  text-decoration: none;
+  font-family: Spicy Rice;
+  transition-duration: 0.2s;
+  position:absolute;
+  top: 120px;
+  right: 0;
+  margin: 10px;
+  margin-right: 40px;
+  .btn {
+    background-color: #CCBDF4;
+  }
+}
+
+.remove_button_audio{
+  text-decoration: none;
+  font-family: Spicy Rice;
+  transition-duration: 0.2s;
+  position: center;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 16px;
+  .btn {
+    background-color: #CCBDF4;
+  }
+}
+
+.remove_button_video{
+  text-decoration: none;
+  font-family: Spicy Rice;
+  transition-duration: 0.2s;
+  position: center;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 16px;
+  .btn {
+    background-color: #CCBDF4;
+  }
+}
+
+.remove_button_image{
+  text-decoration: none;
+  font-family: Spicy Rice;
+  transition-duration: 0.2s;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 16px;
+  .btn {
+    background-color: #CCBDF4;
+  }
+}
+
+.btn {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+
+.btn:hover{
+  color: white;
+  border-color: #80bff6;
+}
+
+.btn {
+  font-family: $text-font;
+  background: $highlight-color;
+  // color: white;
+  // padding: 6px 12px;
+  // border-radius: 8px;
+  // transition: background 0.3s;
+}
+
+.btn-primary {
+  background-color: $primary-color;
+}
+
+.btn-secondary {
+  background-color: $pale-mauve;
+}
+
+.btn-aubergine {
+  background-color: $aubergine;
+}
+
+.cancel-account-button {
+  background-color: #888888;
+  margin-bottom: 30px;
+}

@@ -1,30 +1,32 @@
 <div class="content-container">
   <div class="timecapsules-container cards-container">
-    <h1>Welcome, <%= current_user.username %></h1>
-    <div class= "add">
-      <%= link_to "Edit profile", edit_user_registration_path, class:"add btn btn-primary rounded-pill" %>
+    <div class="headline highlight d-flex justify-content-between align-items-center">
+      <h1>Welcome, <%= current_user.username %></h1>
+      <%= link_to "Edit profile", edit_user_registration_path, class:"btn btn-primary rounded-pill" %>
     </div>
     <div class="timecapsules-container cards-container">
-     <h2>Update or add time capsules</h2>
-    <%= link_to(new_timecapsule_path, class: "add btn btn-primary rounded-pill") do %>
-      <span><i class="fa-solid fa-square-plus"></i> Add time capsule</span>
-    <% end %>
-    <ul class="cards">
-    <% if @timecapsules.empty? %>
-      <li>You do not have any time capsule. Click the button to create one.</li>
-    <% end %>
-      <% @timecapsules.each do |timecapsule| %>
-      <li class="card">
-        <h3 class="card-title"><%= timecapsule.name %></h3>
-        <div class="contributors-container">
-          <p>
-            <span class="title">Date of creation:</span>
-            <span class="contributors"> <%= timecapsule.created_at.to_formatted_s(:long_ordinal)  %></span>
-          </p>
-        </div>
-        <%= link_to "Update", timecapsule_path(timecapsule), class: "btn btn-success rounded-pill" %>
-      </li>
-      <% end %>
+      <div class="headline d-flex justify-content-between align-items-center">
+        <h2>Update or add time capsules</h2>
+        <%= link_to(new_timecapsule_path, class: "add btn btn-secondary rounded-pill") do %>
+          <span><i class="fa-solid fa-square-plus"></i> Add time capsule</span>
+        <% end %>
+      </div>
+      <ul class="cards">
+        <% if @timecapsules.empty? %>
+          <li>You do not have any time capsule. Click the button to create one.</li>
+        <% end %>
+        <% @timecapsules.each do |timecapsule| %>
+        <li class="card">
+          <h3 class="card-title"><%= timecapsule.name %></h3>
+          <div class="contributors-container">
+            <p>
+              <span class="title">Date of creation:</span>
+              <span class="contributors"> <%= timecapsule.created_at.to_formatted_s(:long_ordinal)  %></span>
+            </p>
+          </div>
+          <%= link_to "Update", timecapsule_path(timecapsule), class: "btn btn-success rounded-pill" %>
+        </li>
+        <% end %>
       </ul>
     </div>
   <div class="memoryboxes-container cards-container">
@@ -50,4 +52,5 @@
     <% end %>
     </ul>
   </div>
+</div>
 </div>

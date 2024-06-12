@@ -1,8 +1,18 @@
 <div class="big_div" data-controller="memory-search">
   <div class="info_div">
     <% if @memorybox.present? %>
-      <h1 class="timecapsule-name"><%= @timecapsule.name %>'s time capsule</h1>
-      <h2 class="memorybox-title"><%= @memorybox.title %>'s memorybox</h2>
+    <div class="headline highlight d-flex justify-content-between align-items-center">
+      <div class="with-bread-crumbs">
+        <h1><%= @memorybox.title.capitalize %>'s memorybox</h1>
+        <h5 class="bread-crumbs d-flex justify-content-start align-items-center"> >
+        <%= link_to(timecapsule_path(@timecapsule), class:"d-inline") do %>
+        <%= @timecapsule.name.capitalize %> Time Capsule
+        <% end %>
+        > <%= @memorybox.title.capitalize %>
+        </h5>
+      </div>
+      <%= link_to "create a memory", new_memorybox_memory_path, class:"btn btn-primary rounded-pill" %>
+    </div>
       <%= render 'searchbar' %>
     <% else %>
       <h1>You don't have memories in this memory box</h1>
@@ -13,6 +23,5 @@
   </div>
 
   <div class="nice_button">
-    <%= link_to "create a memory", new_memorybox_memory_path, class:"btn" %>
   </div>
 </div>
