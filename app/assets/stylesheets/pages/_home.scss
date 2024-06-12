@@ -5,37 +5,40 @@
   flex-direction: column;
   align-items: center;
   font-family: "lato" "sans-serif";
-  padding: 5%;
-  margin: 9%;
-  margin-top: 5%;
-  border-radius: 2%;
+  padding: 2%;
+  margin: 4%;
+  margin-top: 2%;
+  border-radius: 5px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 15%);
+  height: 65vh;
+  justify-content: center;
 }
 
 #media-memory-home-page {
   height:40cap;
   box-sizing: content-box;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 15%);
+  box-shadow: 0 5px 15px rgba(75, 67, 67, 0.15);
 }
 
 .big_header {
   color: #E9FED5 ;
-  font-size: 6rem;
+  font-size: 4rem;
   font-family :$big-header;
   border-radius: 50%;
   background-color:$pale-mauve;
-  padding: 5%;
+  padding: 4%;
   margin: auto;
   text-align: center;
 }
 
 .motto {
-  padding: 3%;
+  padding: 2%;
 }
 
 .mottotext {
   font-family: $big-header;
   color: $citrus-green;
+  font-size: 2rem;
 }
 
 #exampleshome {
@@ -43,6 +46,7 @@
   flex-direction: row;
   align-items: flex-start;
   justify-content: space-around;
+  padding-bottom: 60px;
 }
 
 .homesecondtitle {
@@ -55,7 +59,7 @@
 
 .presentation{
   text-align: center;
-  padding: 3%;
+  padding: 2%;
   font-family: $text-font;
   font-size: larger;
 }
