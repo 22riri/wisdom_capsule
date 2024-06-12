@@ -10,7 +10,7 @@
           <div class="media-tag">image</div>
           <div class="date"><%= memory.date_of_memory %></div>
         </div>
-        <div class="text"><%= memory.text %></div>
+        <div class="text-another"><%= memory.text %></div>
         <div class="">
               <%= link_to "see this memory", memorybox_memory_path(@memorybox, memory), class: "add btn btn-primary rounded-pill" %>
             </div>
@@ -25,7 +25,7 @@
           <div class="media-tag">video</div>
           <div class="date"><%= memory.date_of_memory %></div>
         </div>
-        <div class="text"><%= memory.text %></div>
+        <div class="text-another"><%= memory.text %></div>
         <div class="">
               <%= link_to "see this memory", memorybox_memory_path(@memorybox, memory), class: "add btn btn-primary rounded-pill"%>
             </div>
@@ -40,7 +40,7 @@
           <div class ="media-tag">audio</div>
           <div class="date"><%= memory.date_of_memory %></div>
         </div>
-        <div class="text"><%= memory.text %></div>
+        <div class="text-another"><%= memory.text %></div>
         <div class="">
               <%= link_to "see this memory", memorybox_memory_path(@memorybox, memory), class: "add btn btn-primary rounded-pill" %>
             </div>
@@ -49,7 +49,7 @@
   <% else %>
     <div class="memory_card">
       <div class="text_memory">
-        <div class="text"><%= memory.text %></div>
+        <div class="text-another"><%= memory.text.size >= 100 ? memory.text.truncate(100) : memory.text %></div>
       </div>
       <div class="title"><%= memory.title %></div>
       <div class="info">
