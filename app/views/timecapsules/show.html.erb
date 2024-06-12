@@ -5,7 +5,7 @@
     <ul class="timecapsule-cards">
     <%if @timecapsule.memoryboxes.empty?%>
     <p class = "emptytimecapsulemessage"> You haven't created any memoryboxes yet ... Have fun and happy memoryboxing !</p>
-         <%else%>
+      <%else%>
       <% @timecapsule.memoryboxes.find_each do |memorybox| %>
         <li class="timecapsule-card">
           <div>

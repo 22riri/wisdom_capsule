@@ -9,7 +9,7 @@
       <div class="card">
         <h2><%= timecapsule.name %></h2>
         <p class="text-center"><%= timecapsule.created_at.strftime("%B %d, %Y") %></p>
-        <%= link_to "Check timecapsule", timecapsule_path(timecapsule), class: "my-class" %>
+        <%= link_to "Check timecapsule", timecapsule_path(timecapsule), class: "btn btn-primary rounded-pill" %>
       </div>
     <% end %>
   </div>
