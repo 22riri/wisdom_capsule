@@ -1,13 +1,17 @@
 <div class="content-container">
   <div class="timecapsules-container cards-container">
-    <h1>Welcome, <%= current_user.username %></h1>
+    <div class="headline highlight">
+      <h1>Welcome, <%= current_user.username.capitalize %></h1>
+    </div>
     <div class= "add">
-      <%= link_to "Edit profile", edit_user_registration_path, class:"add btn btn-primary rounded-pill" %>
+      <%= link_to(edit_user_registration_path, class:"add btn btn-primary rounded-pill") do %>
+      <span><i class="fa-regular fa-pen-to-square"></i> Edit profile</span>
+      <% end %>
     </div>
     <div class="timecapsules-container cards-container">
-     <h2>Update or add time capsules</h2>
+     <h2>Add or update time capsules</h2>
     <%= link_to(new_timecapsule_path, class: "add btn btn-primary rounded-pill") do %>
-      <span><i class="fa-solid fa-square-plus"></i> Add time capsule</span>
+      <span><i class="fa-solid fa-plus"></i> Create time capsule</span>
     <% end %>
     <ul class="cards">
     <% if @timecapsules.empty? %>
