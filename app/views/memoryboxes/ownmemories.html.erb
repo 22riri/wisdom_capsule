@@ -1,15 +1,15 @@
 <div class="big_div" data-controller="memory-search">
   <div class="info_div">
     <% if @memorybox.present? %>
-      <h1 class="timecapsule-name"><%= @time_capsule.name %>'s time capsule</h1>
+      <h1 class="timecapsule-name"><%= @timecapsule.name %>'s time capsule</h1>
       <h2 class="memorybox-title"><%= @memorybox.title %>'s memorybox</h2>
-      <%= render 'memories/searchbar' %>
+      <%= render 'searchbar' %>
     <% else %>
       <h1>You don't have memories in this memory box</h1>
     <% end %>
   </div>
   <div class="memory_list" data-memory-search-target="list">
-    <%= render 'memories/memorylist', memories: @memories %>
+    <%= render 'memorylist', memories: @memories %>
   </div>
 
   <div class="nice_button">
