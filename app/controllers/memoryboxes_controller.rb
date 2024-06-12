@@ -21,7 +21,6 @@ class MemoryboxesController < ApplicationController
     end
   end
 
-
   def ownmemories
     # TO DO : in case a user can have several memory boxes inside a time capsule, this needs to be extended
     @memorybox = Memorybox.where(id: params[:memorybox_id], user: current_user)[0]

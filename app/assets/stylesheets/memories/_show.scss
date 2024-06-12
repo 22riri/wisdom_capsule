@@ -38,7 +38,6 @@
   background-color: #000; /* Fallback background color */
 }
 
-
 .media_memory img,
 .media_memory video {
     position: absolute;
@@ -52,7 +51,6 @@
 .media-container audio {
   width: 100%;
 }
-
 
 .title{
   text-align: left;
@@ -92,6 +90,7 @@
   direction: inline;
   justify-content: space-between;
 }
+
 .memory-show-media {
   height: 600px;
   width: auto;
