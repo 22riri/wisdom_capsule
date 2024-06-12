@@ -24,15 +24,14 @@
                 input_html: { autocomplete: "current-password" } %>
     <%= f.input :media, as: :file %>
 
-    <div class="form-actions">
-      <%= f.button :submit, "Update" %>
-    </div>
-      <div>
-        <%= button_to "Delete my account", registration_path(resource_name), data: { confirm: "Are you sure?", turbo_confirm: "Are you sure?" }, method: :delete, class:"cancel-account-button" %>
+    <div class= "threeformbuttons">
+      <div class="updateandeletebutton">
+        <%= f.button :submit, "Update"%>
+        <%= button_to "Delete account", registration_path(resource_name), data: { confirm: "Are you sure?", turbo_confirm: "Are you sure?" }, method: :delete, class:"deletebutton" %>
       </div>
-        <div>
-          <%= link_to "Back", :back %>
-        </div>
-  </div>
-
-<% end %>
+      <div class="backbutton">
+        <%= link_to "Back", :back, class:"backlinkbutton" %>
+      </div>
+    </div>
+  <% end %>
+</div>
