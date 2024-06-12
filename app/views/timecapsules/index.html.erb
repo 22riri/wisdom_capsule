@@ -1,10 +1,5 @@
-<h1>Time Capsules</h1>
-<% @timecapsules.each do |timecapsule| %>
-  <div class="time-capsule">
-    <h2><%= timecapsule.name %></h2>
-    <p><%= timecapsule.created_at.strftime("%B %d, %Y") %></p>
-  </div>
-<% end %>
+<h1 class="text-center mt-3">Time Capsules</h1>
+
 <div class="add btn btn-primary rounded-pill">
   <%= link_to 'Create', new_timecapsule_path, class: "rounded-pill" %>
 </div>

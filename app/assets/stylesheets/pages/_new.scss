@@ -4,8 +4,8 @@ h1 {
 
 h2 {
   font-family: $big-header;
-  text-align: center;
-  padding: 2%;
+  // text-align: center;
+  // padding: 2%;
 }
 .text-center{
   text-align: center;
@@ -23,15 +23,6 @@ h2 {
   margin: 5%;
   margin-top: 3%;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 15%);;
-}
-
-.btn {
-  font-family: $text-font;
-  background: $highlight-color;
-  color: white;
-  padding: 6px 12px;
-  border-radius: 8px;
-  transition: background 0.3s;
 }
 
 .formtitle {

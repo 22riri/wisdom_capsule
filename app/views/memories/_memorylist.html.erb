@@ -1,0 +1,64 @@
+<% memories.each do |memory| %>
+  <% if memory.media.present? %>
+    <% if memory.media.blob.content_type.starts_with?('image/') %>
+      <div class="memory_card">
+        <div class="media_memory">
+          <%= image_tag memory.media  %>
+        </div>
+        <div class="title"><%= memory.title %></div>
+        <div class="info">
+          <div class="media-tag">image</div>
+          <div class="date"><%= memory.date_of_memory %></div>
+        </div>
+        <div class="text"><%= memory.text %></div>
+        <div class="remove_button_image">
+          <%= link_to "Remove my memory", memorybox_memory_path(@memorybox, memory), class:"btn rounded-pill", data: { turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+        </div>
+      </div>
+    <% elsif memory.media.blob.content_type.starts_with?('video/') %>
+      <div class="memory_card">
+        <div class="media_memory">
+        <%= video_tag memory.media, controls: true %>
+        </div>
+        <div class="title"><%= memory.title %></div>
+        <div class="info">
+          <div class="media-tag">video</div>
+          <div class="date"><%= memory.date_of_memory %></div>
+        </div>
+        <div class="text"><%= memory.text %></div>
+        <div class="remove_button_video">
+          <%= link_to "Remove my memory", memorybox_memory_path(@memorybox, memory), class:"btn rounded-pill", data: { turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+        </div>
+      </div>
+    <% elsif memory.media.blob.content_type.starts_with?('audio/') %>
+      <div class="memory_card">
+        <div class="media_memory">
+        <%= audio_tag memory.media, controls: true %>
+        </div>
+        <div class="title"><%= memory.title %></div>
+        <div class="info">
+          <div class ="media-tag">audio</div>
+          <div class="date"><%= memory.date_of_memory %></div>
+        </div>
+        <div class="text"><%= memory.text %></div>
+        <div class="remove_button_audio">
+          <%= link_to "Remove my memory", memorybox_memory_path(@memorybox, memory), class:"btn rounded-pill", data: { turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+        </div>
+      </div>
+    <% end %>
+  <% else %>
+    <div class="memory_card">
+      <div class="text_memory">
+            <div class="text"><%= memory.text %></div>
+      </div>
+        <div class="title"><%= memory.title %></div>
+          <div class="info">
+            <div class ="media-tag">Text</div>
+              <div class="date"><%= memory.date_of_memory %></div>
+        </div>
+      <div class="remove_button_audio">
+        <%= link_to "Remove my memory", memorybox_memory_path(@memorybox, memory), class:"btn rounded-pill", data: { turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+      </div>
+    </div>
+  <% end %>
+<% end %>

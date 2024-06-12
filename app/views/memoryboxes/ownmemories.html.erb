@@ -1,0 +1,18 @@
+<div class="big_div" data-controller="memory-search">
+  <div class="info_div">
+    <% if @memorybox.present? %>
+      <h1 class="timecapsule-name"><%= @time_capsule.name %>'s time capsule</h1>
+      <h2 class="memorybox-title"><%= @memorybox.title %>'s memorybox</h2>
+      <%= render 'memories/searchbar' %>
+    <% else %>
+      <h1>You don't have memories in this memory box</h1>
+    <% end %>
+  </div>
+  <div class="memory_list" data-memory-search-target="list">
+    <%= render 'memories/memorylist', memories: @memories %>
+  </div>
+
+  <div class="nice_button">
+    <%= link_to "create a memory", new_memorybox_memory_path, class:"btn rounded-pill" %>
+  </div>
+</div>

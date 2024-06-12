@@ -22,7 +22,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;;
+  width: 100%;
 }
 
 .info_div {
@@ -32,13 +32,8 @@
   text-align: center;
 }
 
-.media_memory2
- {
-
+.media_memory2 {
   width: 100%;
-  height: 0;
-  padding-bottom: 56.25%; /* 16:9 aspect ratio */
-  position: relative;
   overflow: hidden;
   background-color: #000; /* Fallback background color */
 }
@@ -98,68 +93,10 @@
   justify-content: space-between;
 }
 
-
-.nice_button{
-  text-decoration: none;
-  font-family: Spicy Rice;
-  transition-duration: 0.2s;
-  position:absolute;
-  top: 120px;
-  right: 0;
-  margin: 10px;
-  margin-right: 40px;
-  .btn {
-    background-color: #CCBDF4;
-  }
-}
-
-.remove_button_audio{
-  text-decoration: none;
-  font-family: Spicy Rice;
-  transition-duration: 0.2s;
-  position: center;
-  display: flex;
-  justify-content: space-between;
-  margin-top: 16px;
-  .btn {
-    background-color: #CCBDF4;
-  }
-}
-
-.remove_button_video{
-  text-decoration: none;
-  font-family: Spicy Rice;
-  transition-duration: 0.2s;
-  position: center;
-  display: flex;
-  justify-content: space-between;
-  margin-top: 16px;
-  .btn {
-    background-color: #CCBDF4;
-  }
-}
-
-.remove_button_image{
-  text-decoration: none;
-  font-family: Spicy Rice;
-  transition-duration: 0.2s;
-  display: flex;
-  justify-content: space-between;
-  margin-top: 16px;
-  .btn {
-    background-color: #CCBDF4;
-  }
-}
-
-
-.btn:hover{
-  color: white;
-  border-color: #80bff6;
-}
-
 .memory-show-media {
-  height: 400px;
+  height: 600px;
   width: auto;
+  object-fit: contain;
 }
 
 .memory-show-video {
