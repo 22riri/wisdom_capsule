@@ -27,7 +27,11 @@
 
 .search-bar-filters {
   justify-content: flex-start;
-  align-items: center;
+  align-items: normal;
+  color: $aubergine;
+  :hover {
+    color: $pale-mauve;
+  }
 }
 
 .media-icon {

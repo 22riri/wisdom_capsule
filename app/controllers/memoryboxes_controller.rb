@@ -36,14 +36,16 @@ class MemoryboxesController < ApplicationController
         if params[:media] == "video"
           @memories = @memories.filter{ | memory | memory.media.present? && (memory.media.blob.content_type.starts_with?("video"))}
         elsif params[:media] == "photo"
-          @memories = @memories.filter{ | memory | memory.media.present? && (memory.media.blob.content_type.starts_with?("image/jpeg") || memory.media.blob.content_type.starts_with?("image/png"))}
+            @memories = @memories.filter{ | memory | memory.media.present? && (memory.media.blob.content_type.starts_with?("image/jpeg") || memory.media.blob.content_type.starts_with?("image/png"))}
         elsif params[:media] == "audio"
-          @memories = @memories.filter{ | memory | memory.media.present? && (memory.media.blob.content_type.starts_with?("audio"))}
+            @memories = @memories.filter{ | memory | memory.media.present? && (memory.media.blob.content_type.starts_with?("audio"))}
+        elsif params[:media] == "text_memory"
+            @memories = @memories.filter{ | memory | !memory.media.present? }
         elsif params[:media] == "all"
-          @memories = @memories
+            @memories
         end
       else
-        @memories = @memorybox.memories
+        @memories
       end
     end
     respond_to do |format|
