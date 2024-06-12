@@ -22,8 +22,6 @@ class MemoriesController < ApplicationController
     end
   end
 
-
-
   def destroy
     @memory = Memory.find(params[:id])
     @memorybox = Memorybox.find(params[:memorybox_id])
