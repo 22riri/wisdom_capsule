@@ -3,6 +3,13 @@ import { Controller } from "@hotwired/stimulus";
 export default class extends Controller {
   static targets = ["list", "input"];
 
+  toggleActive(event) {
+    this.element.querySelectorAll('.media-icon').forEach((icon) => {
+      icon.classList.remove('active');
+    });
+    event.currentTarget.classList.add('active');
+  }
+
   filterVideo(e) {
     e.preventDefault();
     this.#filter("video");

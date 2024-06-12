@@ -37,3 +37,16 @@
 .media-icon {
   margin: 20px;
 }
+
+.media-icon.active {
+  color: $pale-mauve;
+}
+
+.form-control.mr-3 {
+  margin-right: 20px;
+  padding: 10px;
+  border: 1px solid $aubergine;
+  border-radius: 4px;
+  font-size: 16px;
+  color: $aubergine;
+  }
