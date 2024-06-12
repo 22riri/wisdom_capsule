@@ -49,13 +49,13 @@
   <% else %>
     <div class="memory_card">
       <div class="text_memory">
-            <div class="text"><%= memory.text %></div>
+        <div class="text"><%= memory.text %></div>
       </div>
-        <div class="title"><%= memory.title %></div>
-          <div class="info">
-            <div class ="media-tag">Text</div>
-              <div class="date"><%= memory.date_of_memory %></div>
-        </div>
+      <div class="title"><%= memory.title %></div>
+      <div class="info">
+        <div class ="media-tag">Text</div>
+        <div class="date"><%= memory.date_of_memory %></div>
+      </div>
       <div class="remove_button_audio">
         <%= link_to "Remove my memory", memorybox_memory_path(@memorybox, memory), class:"btn rounded-pill", data: { turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
       </div>
