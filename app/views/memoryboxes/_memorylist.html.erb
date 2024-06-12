@@ -11,7 +11,7 @@
           <div class="media-tag">image</div>
           <div class="date"><%= memory.date_of_memory %></div>
         </div>
-        <div class="text-another"><%= memory.text %></div>
+        <div class="text-another"><%= memory.text.size >= 25 ? memory.text.truncate(25) : memory.text %></div>
         <div class="">
               <%= link_to "see this memory", memorybox_memory_path(@memorybox, memory), class: "add btn btn-primary rounded-pill" %>
         </div>
@@ -23,12 +23,12 @@
         <div class="media_memory">
         <%= video_tag memory.media, controls: true %>
         </div>
-        <div class="title"><%= memory.title.size >= 30 ? memory.title.truncate(30) : memory.title %></div>
+        <div class="title"><%= memory.title.size >= 30 ? memory.title.truncate(30) : memory.text %></div>
         <div class="info">
           <div class="media-tag">video</div>
           <div class="date"><%= memory.date_of_memory %></div>
         </div>
-        <div class="text-another"><%= memory.text %></div>
+        <div class="text-another"><%= memory.text.size >= 25 ? memory.text.truncate(25) : memory.text %></div>
         <div class="">
               <%= link_to "see this memory", memorybox_memory_path(@memorybox, memory), class: "add btn btn-primary rounded-pill"%>
             </div>
@@ -45,7 +45,7 @@
           <div class ="media-tag">audio</div>
           <div class="date"><%= memory.date_of_memory %></div>
         </div>
-        <div class="text-another"><%= memory.text %></div>
+        <div class="text-another"><%= memory.text.size >= 25 ? memory.text.truncate(25) : memory.text %></div>
         <div class="">
               <%= link_to "see this memory", memorybox_memory_path(@memorybox, memory), class: "add btn btn-primary rounded-pill" %>
             </div>
@@ -64,7 +64,7 @@
         <div class ="media-tag">Text</div>
         <div class="date"><%= memory.date_of_memory %></div>
       </div>
-      <div class="">
+      <div class="button-container">
           <%= link_to "see this memory", memorybox_memory_path(@memorybox, memory), class: "add btn btn-primary rounded-pill" %>
         </div>
     </div>
