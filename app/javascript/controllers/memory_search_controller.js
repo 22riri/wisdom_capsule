@@ -36,6 +36,7 @@ export default class extends Controller {
       .then((response) => response.text())
       .then((data) => {
         this.listTarget.innerHTML = data;
+        console.log(url)
       });
   }
 
