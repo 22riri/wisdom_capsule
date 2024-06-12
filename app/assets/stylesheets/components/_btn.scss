@@ -144,6 +144,18 @@
   // transition: background 0.3s;
 }
 
+.btn-primary {
+  background-color: $primary-color;
+}
+
+.btn-secondary {
+  background-color: $pale-mauve;
+}
+
+.btn-aubergine {
+  background-color: $aubergine;
+}
+
 .cancel-account-button {
   background-color: #888888;
   margin-bottom: 30px;
