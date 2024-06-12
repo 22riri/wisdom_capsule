@@ -27,7 +27,7 @@
     <div class= "threeformbuttons">
       <div class="updateandeletebutton">
         <%= f.button :submit, "Update"%>
-        <%= button_to "Delete account", registration_path(resource_name), data: { confirm: "Are you sure?", turbo_confirm: "Are you sure?" }, method: :delete, class:"deletebutton" %>
+        <%= link_to "Delete account", registration_path(resource_name), data: { confirm: "Are you sure?", turbo_confirm: "Are you sure?" }, method: :delete, class:"deletebutton" %>
       </div>
       <div class="backbutton">
         <%= link_to "Back", :back, class:"backlinkbutton" %>

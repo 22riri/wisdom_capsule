@@ -24,15 +24,15 @@ h1 {
   display: flex;
   width: 100%;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
-  
+
 }
 
 .backbutton {
   display: flex;
   width: 100%;
-  justify-content: flex-start;
+  justify-content: center;
   flex-direction: column;
   align-content: space-between;
   align-items: center;
@@ -45,6 +45,7 @@ h1 {
   border-radius: 8px;
   transition: background 0.3s;
   background-color: #888888;
+  text-decoration: none;
 }
 
 .backlinkbutton {
@@ -54,4 +55,5 @@ h1 {
   border-radius: 8px;
   transition: background 0.3s;
   background-color: #E9FED5;
+  text-decoration: none;
 }
