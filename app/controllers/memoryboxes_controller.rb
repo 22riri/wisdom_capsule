@@ -21,7 +21,6 @@ class MemoryboxesController < ApplicationController
     end
   end
 
-
   def ownmemories
     # TO DO : in case a user can have several memory boxes inside a time capsule, this needs to be extended
     @memorybox = Memorybox.where(id: params[:memorybox_id], user: current_user)[0]
@@ -34,15 +33,21 @@ class MemoryboxesController < ApplicationController
         @memories = @memories.search_by_title_and_text(params[:query]) if params[:query].present?
 
         if params[:media] == "video"
-          @memories = @memories.filter{ | memory | memory.media.present? && (memory.media.blob.content_type.starts_with?("video"))}
+          @memories = @memories.filter do |memory|
+            memory.media.present? && memory.media.blob.content_type.starts_with?("video")
+          end
         elsif params[:media] == "photo"
-            @memories = @memories.filter{ | memory | memory.media.present? && (memory.media.blob.content_type.starts_with?("image/jpeg") || memory.media.blob.content_type.starts_with?("image/png"))}
+          @memories = @memories.filter do |memory|
+            memory.media.present? && (memory.media.blob.content_type.starts_with?("image/jpeg") || memory.media.blob.content_type.starts_with?("image/png"))
+          end
         elsif params[:media] == "audio"
-            @memories = @memories.filter{ | memory | memory.media.present? && (memory.media.blob.content_type.starts_with?("audio"))}
+          @memories = @memories.filter do |memory|
+            memory.media.present? && memory.media.blob.content_type.starts_with?("audio")
+          end
         elsif params[:media] == "text_memory"
-            @memories = @memories.filter{ | memory | !memory.media.present? }
+          @memories = @memories.filter { |memory| !memory.media.present? }
         elsif params[:media] == "all"
-            @memories
+          @memories
         end
       else
         @memories
@@ -50,7 +55,7 @@ class MemoryboxesController < ApplicationController
     end
     respond_to do |format|
       format.html
-      format.text { render partial: "memorylist", locals: {memories: @memories}, formats: [:html] }
+      format.text { render partial: "memorylist", locals: { memories: @memories }, formats: [:html] }
     end
   end
 

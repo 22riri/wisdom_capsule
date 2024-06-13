@@ -19,10 +19,13 @@ h2 {
   flex-direction: column;
   background-color: $primary-color;
   border-radius: 2%;
-  padding: 2%;
-  margin: 5%;
+  padding: 5%;
+  margin: 25%;
   margin-top: 3%;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 15%);;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 15%);
+  .mb-3 {
+    min-width:55vh;
+  }
 }
 
 .formtitle {
@@ -33,6 +36,7 @@ h2 {
 
 .form-actions{
   text-align: center;
+  margin: 0 auto;
 }
 
 .simple_form.new_user + a + a {

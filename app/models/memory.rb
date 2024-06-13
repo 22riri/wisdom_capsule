@@ -7,8 +7,8 @@ class Memory < ApplicationRecord
 
   include PgSearch::Model
   pg_search_scope :search_by_title_and_text,
-    against: [:title, :text],
-    using: {
-      tsearch: { prefix: true }
-    }
+                  against: %i[title text],
+                  using: {
+                    tsearch: { prefix: true }
+                  }
 end

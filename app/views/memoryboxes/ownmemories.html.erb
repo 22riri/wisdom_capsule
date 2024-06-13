@@ -4,22 +4,22 @@
     <div class="headline highlight d-flex justify-content-between align-items-center">
       <div class="with-bread-crumbs">
         <h1><%= @memorybox.title.capitalize %>'s memorybox</h1>
-        <h5 class="bread-crumbs d-flex justify-content-start align-items-center"> >
-        <%= link_to(timecapsule_path(@timecapsule), class:"d-inline") do %>
+        <h5 class="bread-crumbs d-flex justify-content-start align-items-center">
         <%= @timecapsule.name.capitalize %> Time Capsule
-        <% end %>
-        > <%= @memorybox.title.capitalize %>
         </h5>
       </div>
-      <%= link_to "create a memory", new_memorybox_memory_path, class:"btn btn-primary rounded-pill" %>
     </div>
       <%= render 'searchbar' %>
     <% else %>
-      <h1>You don't have memories in this memory box</h1>
+      <h1>You don't have a memory box</h1>
     <% end %>
   </div>
   <div class="memory_list" data-memory-search-target="list">
-    <%= render 'memorylist', memories: @memories %>
+    <% if @memories.empty? %>
+      <h4> You don't have memories in this memorybox 😿😿</h4>
+    <% else %>
+      <%= render 'memorylist', memories: @memories %>
+    <% end %>
   </div>
 
   <div class="nice_button">

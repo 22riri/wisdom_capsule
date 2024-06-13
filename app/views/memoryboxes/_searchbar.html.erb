@@ -1,13 +1,13 @@
 <div class="main-search-bar d-flex justify-content-between align-items-center mt-4">
   <div class="search-bar-filters">
-    <div class="fa-solid fa-video media-icon" data-action="click->memory-search#filterVideo"></div>
-    <div class="fa-solid fa-camera-retro media-icon" data-action="click->memory-search#filterPhoto"></div>
-    <div class="fa-solid fa-microphone media-icon" data-action="click->memory-search#filterAudio"></div>
-    <div class="fa-solid fa-envelope-open-text media-icon" data-action="click->memory-search#filterTextMemory"></div>
-    <div class="fa-solid fa-globe media-icon" data-action="click->memory-search#clearFilter"></div>
+    <div class="fa-solid fa-video media-icon" data-action="click->memory-search#filterVideo click->memory-search#toggleActive"></div>
+    <div class="fa-solid fa-camera-retro media-icon" data-action="click->memory-search#filterPhoto click->memory-search#toggleActive"></div>
+    <div class="fa-solid fa-microphone media-icon" data-action="click->memory-search#filterAudio click->memory-search#toggleActive"></div>
+    <div class="fa-solid fa-envelope-open-text media-icon" data-action="click->memory-search#filterTextMemory click->memory-search#toggleActive"></div>
+    <div class="fa-solid fa-globe media-icon" data-action="click->memory-search#clearFilter click->memory-search#toggleActive"></div>
   </div>
   <%= form_with(url: ownmemories_path, method: :get, class: "d-flex") do |f| %>
-    <%= f.text_field :query, class: "form-control", placeholder: "Search memories", data: {memory_search_target: "input", action: "keyup->memory-search#search"} %>
+    <%= f.text_field :query, class: "form-control mr-3", placeholder: "Search memories", data: {memory_search_target: "input", action: "keyup->memory-search#search"} %>
     <%= f.submit "Search", class: "btn btn-aubergine" %>
   <% end %>
 </div>

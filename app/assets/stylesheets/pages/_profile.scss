@@ -3,7 +3,7 @@
   padding: 25px 0px;
   list-style: none;
   overflow-x: scroll;
-  scroll-snap-type: x mandatory;
+  height: 40vh;
 }
 
 .card {
@@ -11,20 +11,27 @@
   flex-direction: column;
   flex: 0 0 100%;
   padding: 20px;
-  background: $pale-mauve;
+  background: white;
   border-radius: 12px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 15%);
+  box-shadow: 0 5px 8px rgba(0, 0, 0, 12%);
   scroll-snap-align: start;
   transition: all 0.3s;
-}
+  justify-content: space-evenly;
+  }
+
 
 .card:not(:last-child) {
-  margin-right: 10px;
+  margin-right: 10px!important;
 }
+
+.card:first-child {
+  margin-left: 10px!important;
+  }
 
 .card:hover {
   color: var(--white);
-  background: var(--red);
+  background: $light-gray;
+
 }
 
 .card .card-title {

@@ -39,6 +39,7 @@
   display: flex;
   justify-content: space-between;
   margin-top: 16px;
+  align-items: center;
 }
 
 .btn {
@@ -99,5 +100,6 @@
 
 .cancel-account-button {
   background-color: #888888;
-  margin-bottom: 30px;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
