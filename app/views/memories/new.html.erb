@@ -4,8 +4,10 @@
 <div class = "newmemoryform">
 <p class = "newmemoryformdescription"><strong>You can create a new memory</strong></p>
 <%= simple_form_for [@memorybox, @memory] do |f| %>
-  <%= f.input :title %>
-  <%= f.input :text %>
+  <%= f.input :title,
+  :placeholder => "My amazing memory" %>
+  <%= f.input :text,
+  :placeholder => "Always be kind to others" %>
   <%= f.input :media, as: :file %>
   <%= f.input :date_of_memory,
               :placeholder => "My wonderful memory happened on",
