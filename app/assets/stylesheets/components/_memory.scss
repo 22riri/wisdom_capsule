@@ -10,6 +10,9 @@
   height: 400px;
   width: 400px;
   overflow: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .memory_list {

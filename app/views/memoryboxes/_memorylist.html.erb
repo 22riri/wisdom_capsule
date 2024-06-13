@@ -3,25 +3,23 @@
     <% if memory.media.blob.content_type.starts_with?('image/') %>
       <div class="memory_card">
         <div class="memory-card-child">
-        <div class="media_memory">
-          <%= image_tag memory.media  %>
+          <div class="media_memory">
+            <%= image_tag memory.media  %>
+          </div>
+          <div class="title"><%= memory.title.size >= 30 ? memory.title.truncate(30) : memory.title %></div>
+          <div class="info">
+            <div class="media-tag">image</div>
+            <div class="date"><%= memory.date_of_memory %></div>
+          </div>
+          <div class="text-another"><%= memory.text %></div>
         </div>
-        <div class="title"><%= memory.title.size >= 30 ? memory.title.truncate(30) : memory.title %></div>
-        <div class="info">
-          <div class="media-tag">image</div>
-          <div class="date"><%= memory.date_of_memory %></div>
-        </div>
-        <div class="text-another"><%= memory.text %></div>
-        <div class="">
-              <%= link_to "see this memory", memorybox_memory_path(@memorybox, memory), class: "add btn btn-primary rounded-pill" %>
-        </div>
-      </div>
+        <%= link_to "see this memory", memorybox_memory_path(@memorybox, memory), class: "add btn btn-primary rounded-pill" %>
       </div>
     <% elsif memory.media.blob.content_type.starts_with?('video/') %>
       <div class="memory_card">
         <div class="memory-card-child">
         <div class="media_memory">
-        <%= video_tag memory.media, controls: true %>
+          <%= video_tag memory.media, controls: true %>
         </div>
         <div class="title"><%= memory.title.size >= 30 ? memory.title.truncate(30) : memory.title %></div>
         <div class="info">
@@ -29,44 +27,40 @@
           <div class="date"><%= memory.date_of_memory %></div>
         </div>
         <div class="text-another"><%= memory.text %></div>
-        <div class="">
-              <%= link_to "see this memory", memorybox_memory_path(@memorybox, memory), class: "add btn btn-primary rounded-pill"%>
-            </div>
           </div>
       </div>
+      <%= link_to "see this memory", memorybox_memory_path(@memorybox, memory), class: "add btn btn-primary rounded-pill"%>
     <% elsif memory.media.blob.content_type.starts_with?('audio/') %>
       <div class="memory_card">
         <div class="memory-card-child">
-        <div class="media_memory">
-        <%= audio_tag memory.media, controls: true %>
-        </div>
-        <div class="title"><%= memory.title.size >= 30 ? memory.title.truncate(30) : memory.title %></div>
-        <div class="info">
-          <div class ="media-tag">audio</div>
-          <div class="date"><%= memory.date_of_memory %></div>
-        </div>
-        <div class="text-another"><%= memory.text %></div>
-        <div class="">
-              <%= link_to "see this memory", memorybox_memory_path(@memorybox, memory), class: "add btn btn-primary rounded-pill" %>
-            </div>
+          <div class="media_memory">
+            <%= audio_tag memory.media, controls: true %>
           </div>
+          <div class="title"><%= memory.title.size >= 30 ? memory.title.truncate(30) : memory.title %></div>
+          <div class="info">
+            <div class ="media-tag">audio</div>
+            <div class="date"><%= memory.date_of_memory %></div>
+          </div>
+          <div class="text-another"><%= memory.text %></div>
+        </div>
+        <%= link_to "see this memory", memorybox_memory_path(@memorybox, memory), class: "add btn btn-primary rounded-pill" %>
       </div>
     <% end %>
   <% else %>
     <div class="memory_card">
-      <div class="text-memory-content">
-      <div class="text_memory">
-        <div class="text-another"><%= memory.text.size >= 100 ? memory.text.truncate(100) : memory.text %></div>
+      <div class="memory-card-child">
+        <div class="text-memory-content">
+          <div class="text_memory">
+            <div class="text-another"><%= memory.text.size >= 100 ? memory.text.truncate(100) : memory.text %></div>
+          </div>
+        </div>
+         <div class="title"><%= memory.title.size >= 30 ? memory.title.truncate(30) : memory.title %></div>
+        <div class="info">
+          <div class ="media-tag">Text</div>
+          <div class="date"><%= memory.date_of_memory %></div>
         </div>
       </div>
-      <div class="title"><%= memory.title.size >= 30 ? memory.title.truncate(30) : memory.title %></div>
-      <div class="info">
-        <div class ="media-tag">Text</div>
-        <div class="date"><%= memory.date_of_memory %></div>
-      </div>
-      <div class="">
-          <%= link_to "see this memory", memorybox_memory_path(@memorybox, memory), class: "add btn btn-primary rounded-pill" %>
-        </div>
+      <%= link_to "see this memory", memorybox_memory_path(@memorybox, memory), class: "add btn btn-primary rounded-pill" %>
     </div>
   <% end %>
 <% end %>
