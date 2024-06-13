@@ -21,7 +21,7 @@
       <%= render 'memorylist', memories: @memories %>
     <% end %>
   </div>
-
+    <%= link_to "create a memory", new_memorybox_memory_path(@memorybox), class:"btn btn-primary rounded-pill m-4" %>
   <div class="nice_button">
   </div>
 </div>
