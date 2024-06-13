@@ -4,7 +4,7 @@
       <div class="memory_card">
         <div class="memory-card-child">
           <div class="media_memory">
-            <%= image_tag memory.media  %>
+            <%= cl_image_tag(memory.media.key, gravity: :face, crop: :crop, zoom: 0.4) %>
           </div>
           <div class="title"><%= memory.title.size >= 30 ? memory.title.truncate(30) : memory.title %></div>
           <div class="info">
