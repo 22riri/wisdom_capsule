@@ -2,12 +2,12 @@
   <h1> <%= @timecapsule.name %>'s time capsule </h1>
   <h2>Memory boxes</h2>
   <div class="d-flex">
-    <ul class="timecapsule-cards">
+    <ul class="timecapsule-cards container">
     <%if @timecapsule.memoryboxes.empty?%>
     <p class = "emptytimecapsulemessage"> You haven't created any memoryboxes yet ... Have fun and happy memoryboxing !</p>
       <%else%>
       <% @timecapsule.memoryboxes.find_each do |memorybox| %>
-        <li class="timecapsule-card">
+        <li class="timecapsule-card col-12 col-sm-6 col-lg-4">
           <div>
             <h3 class="card-title"><%= memorybox.title %></h3>
             <div class="card-content">

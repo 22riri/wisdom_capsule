@@ -4,9 +4,9 @@
     <%= link_to 'Create', new_timecapsule_path, class:"btn btn-primary rounded-pill" %>
   </div>
 
-  <div class="cards">
+  <div class="cards container">
     <% @timecapsules.each do |timecapsule| %>
-      <div class="card">
+      <div class="card col-12 col-sm-6 col-lg-4">
         <h2><%= timecapsule.name %></h2>
         <p class="text-center"><%= timecapsule.created_at.strftime("%B %d, %Y") %></p>
         <%= link_to "Check timecapsule", timecapsule_path(timecapsule), class: "btn btn-primary rounded-pill" %>

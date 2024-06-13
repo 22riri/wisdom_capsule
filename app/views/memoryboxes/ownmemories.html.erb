@@ -14,14 +14,11 @@
       <h1>You don't have a memory box</h1>
     <% end %>
   </div>
-  <div class="memory_list" data-memory-search-target="list">
+  <div class="container memory_list" data-memory-search-target="list">
     <% if @memories.empty? %>
       <h4> You don't have memories in this memorybox 😿😿</h4>
     <% else %>
       <%= render 'memorylist', memories: @memories %>
     <% end %>
-  </div>
-
-  <div class="nice_button">
   </div>
 </div>

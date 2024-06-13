@@ -12,7 +12,9 @@
 
         <% if user_signed_in? %>
           <% if controller_name == "memoryboxes" && action_name == "ownmemories" %>
-            <%= link_to "create a memory", new_memorybox_memory_path(@memorybox), class:"btn btn-primary rounded-pill m-4" %>
+            <%= link_to(new_memorybox_memory_path(@memorybox), class:"btn btn-primary rounded-pill m-4") do %>
+              <span><i class="fa-solid fa-plus"></i> Add a memory</span>
+            <% end %>
           <% end %>
           <%# <li class="nav-item-active">
             <%= link_to "Home", root_path, class: "nav-link" %>

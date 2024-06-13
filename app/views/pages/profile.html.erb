@@ -13,12 +13,12 @@
           <span><i class="fa-solid fa-plus"></i> Add time capsule</span>
         <% end %>
       </div>
-      <ul class="cards">
+      <ul class="cards container">
         <% if @timecapsules.empty? %>
           <li>You do not have any time capsule. Click the button to create one.</li>
         <% end %>
         <% @timecapsules.each do |timecapsule| %>
-        <li class="card">
+        <li class="card col-12 col-sm-6 col-lg-4">
           <h3 class="card-title"><%= timecapsule.name %></h3>
           <div class="contributors-container">
             <p>
@@ -33,12 +33,12 @@
     </div>
   <div class="memoryboxes-container cards-container">
     <h2>Your memoryboxes</h2>
-    <ul class="cards">
+    <ul class="cards container">
     <% if @memoryboxes.empty? %>
       <li>You have no memory boxes</li>
     <% end %>
     <% @memoryboxes.each do |memorybox| %>
-      <li class="card">
+      <li class="card col-12 col-sm-6 col-lg-4">
         <h3 class="card-title"><%= memorybox.title %></h3>
         <div class="contents-container">
           <p>Contains:</p>
