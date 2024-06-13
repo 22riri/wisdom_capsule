@@ -28,8 +28,8 @@
         </div>
         <div class="text-another"><%= memory.text %></div>
           </div>
-      </div>
       <%= link_to "see this memory", memorybox_memory_path(@memorybox, memory), class: "add btn btn-primary rounded-pill"%>
+     </div>
     <% elsif memory.media.blob.content_type.starts_with?('audio/') %>
       <div class="memory_card">
         <div class="memory-card-child">
