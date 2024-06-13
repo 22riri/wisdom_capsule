@@ -1,6 +1,7 @@
 <%= simple_form_for (@timecapsule) do |f| %>
   <div class="newmemoryform">
-    <%= f.input :name %>
+    <%= f.input :name,
+     :placeholder => "My favourite sister" %>
     <%= f.submit "Create a timecapsule", class: "btn rounded-pill mt-4" %>
     <div class="form-actions mt-2">
     </div>
