@@ -4,6 +4,10 @@ footer {
   background: linear-gradient(147deg, rgba(233,254,213,1) 0%, rgba(224,215,248,1) 35%, rgba(224,215,248,1) 100%);
   a {
     color: $aubergine;
+    transition: all .3s ease;
+  }
+  a:hover {
+    color: $gray;
   }
   .fa-heart {
     color: $red;
@@ -57,4 +61,5 @@ footer {
 }
 .links a {
   display: inline-block;
+  margin-bottom: 0;
 }
