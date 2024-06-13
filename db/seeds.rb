@@ -18,7 +18,6 @@ User.destroy_all
 puts "Create amigo imaginario"
 
 user1 = User.create(email: "amigoo@gmail.com", password: "123456", username: "amigo")
-user2 = User.create(email: "outroamigo@gmail.com", password: "123456", username: "automi")
 
 puts "creating a time capsule for #{user1.username}..."
 
@@ -28,11 +27,11 @@ puts "Creating 1 memorybox for #{user1.username}..."
 
 memorybox1 = Memorybox.create(title: "Vacations in Mykonos", timecapsule_id: timecapsule1.id, user_id: user1.id)
 
-puts "creating 5 memories..."
+puts "creating 8 memories..."
 
 require "open-uri"
 # creer une file
-file = URI.open("https://images.unsplash.com/photo-1586348943529-beaae6c28db9?q=80&w=2815&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
+file = URI.open("https://images.unsplash.com/photo-1533573103248-543ca8890e42?q=80&w=2874&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
 memory_one = Memory.new(title: "First sunset of the trip", text: "The view was breathtaking", date_of_memory: "2024-06-01", memorybox_id: memorybox1.id)
 memory_one.media.attach(io: file, filename: "nes.png", content_type: "image/png")
 # attacher l image a la memory
@@ -56,7 +55,23 @@ memory_four.media.attach(io: file_four, filename: "nes.png", content_type: "imag
 memory_four.save
 
 file_five = URI.open("https://plus.unsplash.com/premium_photo-1661690248576-181b6547d026?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
-memory_five = Memory.new(title: "Last day ...", text: "It went by so fast but we made such amazing memories together  !", date_of_memory: "2024-06-06", memorybox_id: memorybox1.id)
+memory_five = Memory.new(title: "Last day ...", text: "It went by so fast but we made such amazing memories together !", date_of_memory: "2024-06-11", memorybox_id: memorybox1.id)
 memory_five.media.attach(io: file_five, filename: "nes.png", content_type: "image/png")
 memory_five.save
+
+file_six = URI.open("https://images.unsplash.com/photo-1649434150059-13fee33e1de4?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
+memory_six = Memory.new(title: "Petits farcis, miam !", text: "The food was so gooood !", date_of_memory: "2024-06-07", memorybox_id: memorybox1.id)
+memory_six.media.attach(io: file_six, filename: "nes.png", content_type: "image/png")
+memory_six.save
+
+file_seven = URI.open("https://images.unsplash.com/photo-1519214605650-76a613ee3245?q=80&w=2938&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
+memory_seven = Memory.new(title: "Disco night", text: "I will never forget that funny dance !", date_of_memory: "2024-06-09", memorybox_id: memorybox1.id)
+memory_seven.media.attach(io: file_seven, filename: "nes.png", content_type: "image/png")
+memory_seven.save
+
+file_eight = URI.open("https://images.unsplash.com/photo-1505867798796-639ec7e8cdf5?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
+memory_eight = Memory.new(title: "Jet ski day", text: "That fall was legendary !", date_of_memory: "2024-06-10", memorybox_id: memorybox1.id)
+memory_eight.media.attach(io: file_eight, filename: "nes.png", content_type: "image/png")
+memory_eight.save
+
 puts "Database seeded"
